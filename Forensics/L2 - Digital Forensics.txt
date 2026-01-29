@@ -1,0 +1,371 @@
+Intro to Digital Forensics
+--------------------------------
+
+Digital forensics is the analysis of digital devices to determine what has happened.
+
+This could be to determine if a crime has committed. There are different types of infractions, so it could be a matter
+or breach of company policy.
+
+Computer forensics is the application of investigation and analysis techniques to gather and preserve evidence from a 
+particular computing device in a way that is suitable for presentation in a court of law.
+
+The goal of computer forensics is to perform a structured investigation and maintain a documented chain of evidence to
+find out exactly what has happened on a computing device, and who was responsible.
+
+Digital forensics is the practice of collecting, analysing, and reporting on digital data.
+
+There is usually a specific need for the investigation, i.e. has a particular event occurred?
+
+Usually a forensic examiner is tasked with performing an examination, the outcome of the investigation needs to be
+reported back.
+
+Collecting:
+	> Process of collecting digital evidence.
+	> Can be the specific sourcing of a device for examination.
+	> Data needs to be collected in a forensically sound matter and the order of volatility needs to be considered.
+	> The most volatile evidence must be collected first (RAM snapshot etc)
+
+Analysing:
+	> This phase looks at discovering what has happened or what task was performed using a digital device.
+	> This is looking to fully understand the transgression and the timeline of the events.
+	> This is the how/when things happened.
+
+Reporting:
+	> Creating a document to report our findings to the third party who requested the investigation.
+	> This will offer answers to the reason why the third party wanted the investigation.
+	> The report needs to be very specific with the process followed.
+	> It is important that the conclusions drawn are supported by the results from the investigative process followed.
+
+
+
+There are a variety of possible sources of digital evidence. One is open computer systems - this is what most people think
+of as computers, meaning hard drives, keyboards, desktops, and servers that obey standards.
+
+These systems, with their ever increasing amounts of storage space, can be rich sources of digital evidence.
+
+A simple file can contain incriminating information, and can have associated properties that are useful in an
+investigation.
+
+For example, details such as when it was created, who likely created it, or that it was created on another computer, can
+all be important.
+
+Another source can be computer systems like:
+	> Hard drives, SSDs, removable media.
+	> Operating system artefacts (Windows Registry, system logs, etc).
+	> Application data (email clients, word processors, browsers).
+
+For example,  a company may suspect an employee of stealing confidential design files and sending them to a competitor.
+
+When investigators seize their workstation, they might find:
+	> Hard Drive (Primary Storage)
+		- Recovered CAD files using file carving.
+		- Located compressed .zip archives with sensitive documents.
+
+	> Operating System Artefacts
+		- Windows Event Logs showed multiple USB device connections late at night.
+		- Recent files list confirms access to confidential project folders.
+
+	> Application Data
+		- Email client contained draft emails with attachments, to an external address.
+		- Browser history showed visits to a competitors employee portal.
+
+Another possible source of digital evidence is from mobile devices. This includes smartphones and tablets, and their
+call logs/SMS records, app data, GPS and location history, and photos/videos/audio recordings.
+
+For example, the police are investigating a drug trafficking case, and a suspect's smartphone is seized.
+
+Evidence found on the device might include:
+	> Call Logs and Contacts
+		- Recovered call history showing frequent late night calls to a known dealer.
+		- Contacts list contained aliases matching code names from surveillance.
+
+	> Messaging Apps
+		- WhatsApp chats revealed discussions about "deliveries" with timestamps matching observed moments.
+		- Deleted Telegram messages were partially recovered from the device's database files.
+
+	> Location Data
+		- GPS history showed repeated visits to a warehouse used as a stash location.
+		- Google Maps "Timeline" confirmed travel routes consistent with drug drop-offs.
+
+	> Multimedia Evidence
+		- Photos of packaged substances stored in the gallery.
+		- A voice memo discussing transaction amounts.
+
+We can also gain evidence from network sources. Maybe a financial institution reports a suspected cyber intrusion where
+attackers may have accessed customer data. Investigators analyse their network logs.
+
+Source may include:
+	> Network logs, routers, firewalls etc.
+	> Server logs, web servers, DNS, email servers.
+	> Packet captures from tools like Wireshark.
+	> Cloud services, like Google Drive, iCloud, Dropbox.
+
+Data they might capture includes:
+	> Firewall Logs
+		- Detected multiple failed login attempts from foreign IPs, followed by a successful login at 3:12AM.
+
+	> Intrusion Detection System Alerts
+		- Flagged abnormal outbound traffic patterns - large encrypted data transfers to an unknown server.
+	
+	> Web Server Logs
+		- Showed exploitation of a vulnerable login form (SQL injection attack).
+		- Logs included attacker's IP address and payloads.
+
+	> Packet Capture
+		- Analysis of packet data revealed exfiltration of customer records.
+
+Other sources include Internet and Online Services, Removable and External Devices, and Peripheral Devices:
+
+Internet and Online:
+	> Social media platforms.
+	> Messaging services.
+	> Forums, blogs, websites.
+	> Cloud-hosted virtual machines or SaaS platforms.
+
+Removable and External Devices:
+	> USB drives, SD cards, external HDD/SSDs.
+	> IoT devices like smart TVs/speakers, smart watches, etc.
+	> Vehicle infotainment systems, GPS routes, Bluetooth logs.
+
+Peripheral Devices:
+	> Printers, spool files, cached docs.
+	> Scanners, copiers, stored images.
+	> Surveillance cameras/DVRs.
+
+System administrators who find child pornography on computers in their workplace are in a perilous position.
+
+Simply deleting the contraband material and not reporting the problem may be viewed as criminally negligent.
+
+A system admin who did not muster his employer's support before calling the police to report the material, which was there
+at the fault of another employee, might be disavowed by the employer.
+
+He might even end up having to hire his own lawyer, testify on his own time, and ultimately find a new job.
+
+Well-meaning attempts to investigate child pornography complaints have resulted in system admins being prosecuted
+for downloading and possessing illegal materials themselves.
+
+Therefore, in addition to being technically prepared for such incidents, it is important for organizations and system
+admins to have clear policies and procedures for responding to these problems.
+
+Forensic Science provides a large body of proven investigative techniques and methods for achieving the ends
+referenced in this text.
+
+By "forensic" we mean a characteristic of evidence that satisfies its suitability for admission as fact, and its ability
+to persuade based upon proof, or high statistical confidence.
+
+The main goals in any investigation are to follow the trails that offenders leave during commission of a crime, and to
+tie perpetrators to the victims and crime scenes.
+
+Although witnesses may identify a suspect, tangible evidence of an individual's involvement is usually more compelling
+and reliable.
+
+Forensic analysts are employed to uncover compelling links between offender, victim, and crime scene.
+
+According to Locard's Exchange Principle, contact between two items results in an exchange.
+
+This principle applies to any contact at a crime scene. There will always be evidence of the interaction, although
+in some cases it may not be easily detectable.
+
+In computer intrusions, the attackers will leave multiple traces of their presence throughout the environment, such
+as in registries, system logs, and network logs.
+
+Furthermore, attackers could transfer elements of the crime scene back with them, like stolen passwords.
+
+The exchanges that occur between individual and crime scene produce trace evidence belonging to one of two categories.
+	> Class Characteristics
+		- Common traits in similar items.
+
+	> Individual Characteristics
+		- More unique, can be linked to a specific person or activity with greater certainty.
+
+For example, a shoe print under a window at a crime scene. The print reveals the make and model of shoe, which is
+a class characteristic - the same as all other shoes of the type.
+
+However, the wear pattern of the shoe may be compared to that of a suspect, and if they match, this is an individual
+characteristic, with a much stronger link.
+
+In order to be useful in an investigation, digital evidence must be preserved and examined in a forensically sound
+manner.
+
+Some practitioners of digital forensics think that a method of preserving or examining digital evidence is only
+forensically sound if it does not alter the original evidence source in any way. This is simply not true.
+
+Traditional disciplines like DNA analysis show that the measure of soundness does not require the original be left
+unaltered.
+
+When samples of biological material are collected, the process generally scrapes or smears the original evidence.
+
+Forensic analysis of the evidential sample further alters the sample, because DNA tests are destructive.
+
+Despite the changes that occur during preservation and processing, these methods are considered sound.
+
+In digital forensics, the routine task of acquiring data from a hard drive, even when using a hardware write-blocker,
+alters the original state of the drive.
+
+Such alterations can include making a hidden area of the drive accessible, or updating information maintained by
+self-monitoring, analysis, and reporting tech on modern drives.
+
+Furthermore, most methods of acquiring the contents of memory on a live system or device will generally alter or
+overwrite portions of memory.
+
+Courts are starting to compel preservation of volatile computer data in some cases, which requires digital investigators
+to preserve data on live systems.
+
+Investigations can be:
+	> Criminal - Government agency is the plaintiff, accused is the defendant.
+	> Civil - Dispute between two entities, either side can be plaintiff or defendant.
+	> Internal - Inquiry held within confines of organization not meant for public review.
+
+Frameworks include:
+	> DFRWS Digital Forensics Model
+	> The Basic Model (Kruse and Heiser)
+	> The Casey Model
+
+The DFRWS model was introduced in 2001, and provides a structured, tech-neutral process for digital forensics:
+	> Identification - Recognizing potential digital evidence.
+	> Preservation - Safeguarding integrity via imaging, chain-of-custody, timestamping, etc.
+	> Collection - Acquiring evidence using approved methods and tools, ensuring legal authority.
+	> Examination - Applying pattern matching, hidden-data recovery, validation, and filtering techniques.
+	> Analysis - Interpreting the extracted evidence using statistical methods, data mining, timelines.
+	> Presentation - Documenting findings, offering expert testimony, and suggesting responses.
+	> Decision - Enabling final determination by legal or management authorities.
+
+This model remains a cornerstone in digital forensics, ensuring that investigations are conducted in a systematic,
+repeatable, and legally-defensible manner.
+
+It was the first formal, academic forensic process model, widely referenced across academic and practical domains.
+
+The Basic Model
+	> Assess
+	> Acquire
+	> Analyse
+	> Report
+
+The Casey Model
+	> Identification/Assessment
+	> Collection/Acquisition
+	> Preservation
+	> Examination
+	> Analysis
+	> Reporting
+
+In the Casey Model:
+	> Investigation
+		- Define the scope of the examination.
+		- Collect all legal docs needed.
+		- Get any permissions required for resources not covered by warrants.
+		- Identify tools required.
+		- Identify the personnel needed.
+		- Identify the stakeholders.
+
+	> Collection
+		- Data is authentic.
+		- Sources of data are reliable.
+		- Nothing was modified.
+		- All tools used are valid.
+		- Personnel are qualified to do their jobs.
+		- Enough evidence exists to prove a point.
+		- Conclusions are valid.
+
+	> Preservation
+		- NEVER work on original data sources.
+		- Forensically sound copies must be identical to originals.
+		- Media used to store copies must be uncontaminated.
+		- A chain of custody must be maintained.
+
+	> Examination
+		- All possible sources must be examined.
+			> File system.
+			> Slack space.
+			> Unallocated space.
+			> Hidden partitions.
+		- All tools used must be tested and verified.
+
+	> Analysis
+		- People other than the investigators may be called upon to examine data.
+		- Technique is as much or more critical than tools used.
+		- Exculpatory evidence is as critical as incriminating evidence.
+
+	> Reporting
+		- Actually begins when assignment is accepted.
+		- First response documentation.
+		- Case documentation.
+		- Process documentation.
+		- Analysis and conclusion.
+
+We need to understand scope, to define precisely what can be searched and what is being looked for.
+
+This can vary with the type of investigation, and must never be exceeded.
+
+Possible computer crimes that we might be investigating include:
+	> Auction or online retail fraud.
+	> Child pornography.
+	> Child endangerment.
+	> Counterfeiting.
+	> Cyberstalking.
+	> Forgery.
+	> Identity theft.
+	> Piracy.
+	> Prostitution.
+	> Theft of services.
+
+Stakeholders in an investigation include:
+	> Principles (accused and accuser)
+	> Decision Makers
+	> Mediator
+	> Regulators
+	> Management
+	> Process Owners
+
+Documentation will include:
+	> General case docs.
+	> Procedural docs.
+	> Process docs.
+	> Timelines.
+		- Case timeline.
+		- Process timeline.
+	> Chain of custody.
+	> Contact info for all involved.
+	> First response documentation.
+		- Notes.
+		- Photos.
+		- Videos.
+	> All legal authorizations.
+	> Every task that was performed related to the investigation.
+	> Summary of events.
+	> List of equipment seized.
+	> What steps were taken and what tools were used.
+	> Detailed analysis of the data.
+
+Process documentation includes:
+	> User manuals.
+	> Installation manuals.
+	> README files.
+	> Update history logs.
+	> Results of testing.
+
+When using the Autopsy forensics program, we first create a new case file, and choose where to store it.
+
+We can then open the kind of file we want to analyse, such as, for our case, a disk image.
+
+This will show us a page called "Configure Ingest", to set up exactly what modules are being used on the data.
+
+There are a handful that might cause issues - like Android Analyzer, and a few others.
+
+We can open a Data Sources tab in the sidebar to get a look at the file structure the drive would have.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

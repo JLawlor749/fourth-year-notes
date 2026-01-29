@@ -1,0 +1,168 @@
+Advanced Security Study Notes
+---------------------------------------------
+
+What is symmetric encryption?
+
+Symmetric encryption is used to conceal the contents of blocks or streams of data of any size, including
+messages, files, encryption keys, and passwords.
+
+
+
+
+
+Asymmetric encryption is used to conceal small blocks of data, such as encryption keys and hash function values,
+which are used in digital signatures. True or false?
+
+True.
+
+
+
+
+
+The attack which modifies the system resources and organization operation is?
+
+
+Active attack.
+
+
+
+
+
+Verifying that users are who they say they are and that each input arriving at the system came from a trusted source is:
+
+Authenticity.
+
+
+
+
+
+The release of message contents and traffic analysis belong to:
+
+Passive attacks.
+
+
+
+
+
+Passive attacks are easy to detect and measures are available to detect it, true or false?
+
+False.
+
+
+
+
+
+The attack in which one entity pretends to be a different entity is a?
+
+Masquerade attack.
+
+
+
+
+
+The attacker tries ever possible key on a piece of ciphertext until an intelligible translation into plaintext is
+obtained. What kind of attack is this?
+
+Brute Force attack.
+
+
+
+
+
+Prevents either a sender or receiver from denying a transmitted message:
+
+Nonrepudiation.
+
+
+
+
+
+Assures that systems work promptly and service is not denied to authorized users.
+
+Availability.
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+List and briefly define categories of passive and active security attacks.
+
+
+
+Passive attacks are in the nature of eavesdropping on, or monitoring of, transmissions. The goal of the opponent is to obtain information that is being transmitted. Two types of passive attacks are the release of message contents, and
+traffic analysis.
+
+The release of message contents is easily understood. A telephone conversation, an electronic mail, and a transferred
+may contain sensitive or confidential information. We would like to prevent an opponent from learning the contents of
+these transmissions.
+
+Active attacks involve some modification of the data stream or the creation of a false stream, and can be subdivided
+into four categories: masquerade, replay, modification of messages, and denial of services.
+
+A masquerade takes place when one entity pretends to be a different entity. A masquerade attack normally includes one
+of the other forms of active attack. For example, authentication sequences can be captured and replayed after a valid
+authentication sequence, enabling an authorized entity with few privileges by impersonating an entity who has them.
+
+Replay involves the passive capture of a data unit and its subsequent retransmission to produce an unauthorized effect.
+
+Modification of messages means some portion of a legitimate message is altered, or that messages are delayed or reordered,
+to produce an unauthorized effect. For example "Give John Brown admin access" could be changed to "Give Frank Smith
+admin access".
+
+Denial of service prevents or inhibits the normal use or management of communications facilities. This may have a specific
+target, like the suppression of all messages going to a particular destination. Another form of this is the disruption
+of an entire network, either by disabling or overloading it with messages.
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+The Miller-Rabin algorithm is typically used to test a large number for primality.
+
+By Fermat's theorem, if N is prime, then for any A we have A^(N-1) = 1 (mod N).
+
+Some numbers pass this test even without being prime, so long as A is coprime with N.
+
+If A is not coprime with N, the test fails, but we can recover a factor of N by computing gcd(A, N).
+
+To do Miller Robin, we first write N - 1 as D*2^S. Then perform the following text for K iterations:
+	> Choose a random base number A, where 2 <= A <= N - 2.
+	> Calculate X = A^D.
+	> Check the two conditions (X (modN) should be either 1 or N - 1).
+	> Repeatedly square X for S - 1 times, checking each time if X is now congruent to N - 1.
+
+If neither of the conditions are met after all steps, then A is a witness to the compositeness of N.
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+DES uses the DEA encryption algorithm. Data are encrypted in 64-bit blocks using a 56-bit key.
+
+The algorithm transforms 64-bit input in a series of steps into output with the same number.
+
+DES is strong against timing attacks, because it is a symmetric algorithm.
+
+The more rounds, the harder cryptanalysis is.
+
+In general, the criterion should be that the number of rounds chosen is such that cryptanalytic efforts require more
+ttime and effort than a simple sear
+
+

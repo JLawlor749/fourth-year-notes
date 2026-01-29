@@ -1,0 +1,44 @@
+Forensics 2023-24 Paper
+--------------------------
+
+Q1. a) Locard's Exchange Principle states that contact between two items results in an exchange. This is an important
+consideration for digital forensics for a number of reasons. First, any interaction with a computer leaves a trace.
+Anyone logging into a system might have their activities tracked by a system log, for example. This also applies to
+handling of evidence though, as any digital traces are vulnerable to contamination via the same principle. For example,
+even the smallest and most innocuous interaction with a file could change the metadata, potentially rendering evidence
+forensically un-sound.
+
+Q1. b) A digital forensics professional specifically is involved in investigations into computer-related incidents, and
+would be only one part of a CIRT. The role of a CIRT is to detect and respond to computer-related incidents and threats,
+using the combined expertise of a variety of professionals, such as PR and HR people, legal experts, technical staff,
+management, and more. A CIRT should have a process or procedure for responding to these events, which should lay out the
+appropriate steps that must be taken. A digital forensics professional would only be part of this team, and would be
+responsible for providing specific domain knowledge and security, as well as conducting an investigation into the incident.
+
+Q1. c) This specific part of the bill permits anyone acting to carry out a search warrant, such as a Garda participating
+in an investigation, to require passwords or encryption keys from parties under investigation. These passwords must be
+provided in a visible and legible manner, such that the investigator can read and use them. Without powers like these,
+investigators might find themselves unable to access devices that carry relevant evidence for an investigation in a
+reasonable and timely manner. Additionally, many devices nowadays will factory reset or lock themselves after a number
+of failed password guesses, which could destroy evidence.
+
+Q1. d) This technique allows a user to perform an internet search using an image rather than a keyword or phrase.
+Investigators can use services like Google Image Search or Yandex to find the original source of an image file.
+Forensically, it can be used to assess whether a subject likely took or created an image or photo themselves, or whether
+they found it online somewhere. This can be useful in catfishing cases, or other social media related investigations,
+as investigators can determine if an individual got their profile photo from online somewhere.
+
+
+
+Q2. a) Validation done by hashing.
+
+Q2. b) RAM, network cache, hard drives, archival media.
+
+Q2. c) True state, running processes, network info.
+
+
+
+Q3. a) An MFT record is the primary database for NTFS, where every file and folder has a record. It starts with the
+signature "FILE", and contains standard info, filenames, and data attributes. A resident file is one whose data is small
+enough to be stored directly inside the MFT record. A non-resident file is one which is too large, and is stored in clusters
+or data runs elsewhere.

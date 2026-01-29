@@ -1,0 +1,63 @@
+EXIF Metadata and Steganography
+----------------------------
+
+EXIF stands for Exchangeable Image File Format.
+
+It's a metadata standards that stores information about a digital image or media file, usually embedded directly into
+the file itself.
+
+EXIF is supported by almost all camera manufacturers.
+
+When you take a photo with a digital camera or a smartphone, the device automatically records details about the picture,
+this being the EXIT metadata.
+
+The metadata tags defined in the EXIF standard cover a wide range:
+	> Camera settings (camera model and make, lens, shutter speed, etc.)
+	> Image metrics (Pixel dimensions, resolution, colour space, and file size)
+	> Date and time information
+	> Location information
+	> A thumbnail for previewing the picture
+	> Description (text)
+	> Copyright info
+
+This data as forensic importance, as it can help us to identify the device used to take a photo (link suspect's phone
+to photos).
+
+It can help reconstruct events through timestamps and GPS tags, and to detect tempering via metadata inconsistencies.
+
+It also helps with the chain of evidence, proving authenticity if the metadata aligns with logs.
+
+Information that can be useful to a forensic investigation:
+	> Camera make and model
+	> Device name
+	> Time when picture was taken
+	> GPS coordinates describing where the picture was taken
+	> Serial number of the device that took the image
+	> Name of the person who took the image
+
+EXIF data is the information available to the device when the picture was taken.
+
+Some EXIF data features can be turned off.
+
+When files are uploaded to web platforms, the EXIF metadata can be removed.
+
+For a forensic investigation it is always good to find pictures relating to the case.
+
+It will be important to determine where, when, and with what device, the photos were taken.
+
+Steganography is the technique of concealing a message within another message or a physical object.
+
+Steghide is a steganography program that is able to hide data in various kinds of image and audio files.
+
+The colour-respectively sample-frequencies are not changed, thus making the embedding resistant against first-order
+statistical tests.
+
+Essentially, steganography can be used to hide data within an image. This can be used to embed a simple string, or
+as much as a PDF or word document.
+
+
+
+
+
+
+

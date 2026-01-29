@@ -1,0 +1,123 @@
+NTFS and MFT
+--------------------
+
+NTFS stands for New Technology File System.
+
+NTFS is the primary file system for recent versions of Windows and Windows Server.
+
+It offers security descriptors, encryption, disk quotes, and rich metadata.
+
+NTFS can support volumes as large as 8 petabytes on Windows Server.
+
+A hard dive needs to be formatted with a particular file system.
+
+An operating system will be capable of working with a particular file system to perform storage and retrieval operations.
+
+Clusters range from 512 bytes to 64KB.
+
+NTFS features organizational efficiency via a B-Tree directory scheme.
+
+It makes data accessible via MFT, and has capacity for very large files.
+
+It can also use User Permissions, file compression, and features security via putting permissions on certain data.
+
+It also utilizes extensive logging on the file system operation.
+
+This is useful for digital forensics, because for a given machine, the hard drive and file system are the data
+persistence mechanism. Anything saved or retrieved comes through here.
+
+The exact operation of a File System can offer information to a digital forensic investigation.
+
+There are a number of useful things available to us via NTFS:
+	> File System Analysis - Master File Table and file metadata.
+	> Recovery - deleted content.
+	> Timestamps - Analysing timestamps.
+	> Journal Analysis - The journals document the changes made to the file system.
+
+The MFT, or Master File Table, is  relational database.
+
+The new Resilient File System, or ReFS, will be the replacement for NTFS.
+
+Every file and folder has a record in the MFT, including the MFT and its copy.
+
+An MFT record contains data/time stamps, the file size, the file status, and the memory addresses for the file content,
+even if the file is deleted.
+
+There are a number of NTFS reserved files, one of which is the MFT.
+
+An MFT record is 1024 bytes in size, in 2 contiguous 512 sectors.
+
+The first sector contains most of the useful forensic data.
+
+The second sector contains file data, if we are dealing with a resident file.
+
+If the file data is greater than 512 bytes, the file is not stored in the MFT record, but somewhere on the drive.
+
+The 2 MFT sectors both finish with F7 04.
+
+The MFT records need to deal with files and folders, and parent/child relations.
+
+The header of an MFT record is 46 49 4C 45, which spells FILE.
+
+It also has the following:
+	> Standard Info - 10 00 00 00
+	> Filename - 30 00 00 00
+	> Additional File Name Entry
+	> Data - 80 00 00 00
+
+It can be difficult to find tutorials online for NTFS digital forensics.
+
+There can be small differences between different OS versions, and a new reference chart would be needed for each
+operating system.
+
+A forensic examiner would need to be familiar with the differences.
+
+The journal is a transactional log of all changes made to a given volume.
+
+If there is an issue with the system, like a power off or a crash, the operating system can use the journal info
+to roll back changes to, or continue, the operation.
+
+The main focus is to try to maintain file system integrity, and prevent catastrophic issues.
+
+We can use the journal to find evidence of file creations, deletions, changes, etc.
+
+The journal may be the only way to prove that a given file existed on a machine, even if anti-forensic techniques
+were employed.
+
+&UsrJrnl, or User Journal, is located in $Extend\$UsrJrnl, and tracks high-level changes.
+
+It provides an efficient change monitoring solution, used by AV and Backups software to monitor file changes.
+
+The typical size is 32MB, and it contains operation codes like fileCreate, fileDelete, Rename, Data Override, etc.
+
+$LogFile is located in Root, and tracks the detailed lower-level transactional changes for NTFS.
+
+It provides file system integrity and resilience, and records the actual data that's been changed.
+
+It may only last hours to days on a primary boot drive, and has a typical size of 64MB.
+
+Some example operation codes for this include AddIndexEntryAllocation, InitializeFileRecordSegment, and
+DeleteIndexEntryAllocation.
+
+80 00 00 00 xx xx xx xx yy is where the $Data attribute is found.
+
+As for all attributes, it comes with 4 bytes standing for its length.
+
+The byte that follows this indicates whether the attribute is resident or not, with 0 for yes and 1 for no.
+
+The data for a resident file is contained within the MFT record.
+
+If a file is non-resident, information is stored elsewhere on the disk drive.
+
+For this to happen, the data size will be greater than 512.
+
+The data is stored in groups called data runs. A data run specifies a range of clusters where the file's data is stored.
+
+It includes information about the starting cluster, the number of clusters, and the run's length.
+
+To retrieve a file, NTFS follows the data runs to retrieve the data from the designated clusters.
+
+There is no single cutoff size for a file to be resident or not, as it depends on several factors.
+
+Depending on how the file is created, for example by the system, there may be more space for it to be a resident file.
+

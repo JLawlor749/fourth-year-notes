@@ -1,0 +1,100 @@
+Protocol Buffers
+-------------------------
+
+These were developed by Google in 2001, and open sourced in 2008.
+
+This allows you to define a schema and encode or decode messages in it into a binary data format.
+
+A protocol buffer compiler, or protoc, auto-generates the code for this for you: there is no need to
+write the low-level bit manipulations manually.
+
+There is a separate implementation of protocol buffers for micropython, which differs somewhat from the regular version
+in its API.
+
+The first step with doing something like this is to define a schema, a structure for the data you'll transmit.
+
+The file extension typically use for this is ".proto".
+
+We create a new file of this type, and start with a declaration like this:
+	> syntax = "proto2";
+
+We can start defining out data with a declaration of a "class" or "table":
+	> message Person {}
+
+This will encapsulate data about the person within the curly braces.
+
+
+
+	syntax = "proto2";
+
+	message Person {
+		required string name = 1;
+		required uint32 age = 2;
+	}
+
+
+
+The "required" keyword tells the compiler that this field is required. The numbers to the right of the equals signs
+are the order of the fields.
+
+To compile this, we run the command "protoc --python_out=. person.proto".
+
+This will export a python file with the data manipulation code we wanted.
+
+We can import the python file, which for the above example would be "person_pb2.py".
+
+
+
+	import person_pb2 as person
+
+	bob = person.Person()
+
+	bob.name = "Bob"
+	bob.age = 23
+
+
+
+This encodes the data into "bob" as bytes, like we wanted.
+
+The opposite would be to use the ".ParseFromString()" method, to parse a byte string back into text.
+
+We can also make more complex, nested structures with the protocol buffer classes.
+
+
+
+	syntax = "proto2";
+
+	message DOB {
+		required uint32 day = 1;
+		required uint32 month = 2;
+		required uint32 year = 3;
+
+
+	message Person {
+		required string name = 1;
+		required uint32 age = 2;
+		required DOB birthday = 3;
+	}
+
+
+
+Protocol buffers are also the basis of Google's Remote Procedure Call protocol, or gRPC, which is widely used in
+industry.
+
+The normal protocol buffer language allows you to specify procedures in the form of function signatures.
+
+This is used to generate both client and server code.
+
+For the lab, we need to make last week's code act as both the subscriber and publisher depending on what variables
+are set, and on having it use protocol buffers to send stuff.
+
+
+
+
+
+
+
+
+
+
+

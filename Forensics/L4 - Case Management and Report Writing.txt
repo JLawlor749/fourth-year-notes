@@ -1,0 +1,173 @@
+Case Management and Report Writing
+------------------------------------------
+
+Each case is a project. Any misstep will be pounced upon in court by the opposition. Managing the case as a project helps
+to avoid any errors in procedure.
+
+Good reporting allows you to demonstrate good process.
+
+Case flow can be divided into three stages: preparation, investigation, and presentation.
+
+These stages map well to the investigative model.
+
+Preparation is done outside the scope of a conventional investigation:
+	> Involves "creating" the case investigation team/department.
+	> Policies and procedures are defined.
+	> Team roles are defined.
+
+Investigation involves the following:
+	> Triage.
+	> First response.
+	> Scene management.
+	> Lab preparation.
+	> Evidence handling.
+	> Evidence examination.
+
+Triage involves assessing any risks, to people, systems, or data.
+	> Mitigate as many risks as possible.
+	> Determine priorities.
+	> Is saving the data more important than nabbing the culprit?
+	> Is identifying the culprit worth a financial loss?
+
+First response uses the crime scene first-response protocols wherever possible.
+	> Determine the best method for collecting evidence.
+	> Perform live-response if necessary.
+	> Collect evidentiary materials in a forensically sound manner.
+
+Crime scene management involves preserving the scene for other investigators.
+	> Survey the scene.
+	> Document the scene (with photos and videos).
+	> Search the scene.
+	> Try to virtually reconstruct the crime.
+
+Lab preparation is where we prepare a repository for digital evidence.
+	> Sufficient storage.
+	> Sufficient security.
+	> Ensure proper tools are ready.
+	> Ensure personnel are ready to receive evidentiary materials.
+
+Evidence handling involves prevention of environmental contamination.
+	> Block electromagnetic transmissions.
+	> Maintain excellent chain of custody logs.
+	> Have a way to keep devices powered during transport.
+	> Don't damage anything.
+
+Evidence examination includes making sure we use the right tool for the job.
+	> We document everything we do.
+	> Never touch the originals.
+
+Presentation stage, we need to avoid interpretation of results.
+	> Present all evidence, both incriminating and exculpatory.
+	> Be prepared to back up any statements or findings in the reports.
+
+Report writing is the stage where the final report is written.
+	> Case summary.
+	> Authorizations, warrants, subpoenas.
+	> Procedural documentation.
+	> All case notes.
+	> All photographs and videos.
+	> A conclusion.
+
+Case summary includes information such as the following.
+	> Who requested the investigation?
+	> Who are the principles involved?
+	> When did the incident occur?
+	> When was the report filed?
+	> What allegedly happened?
+
+Procedural documentation is where we write down the following information.
+	> An inventory of items examined.
+	> A list of tools used.
+	> A timeline of procedures performed.
+	> A list of people who performed these procedures.
+	> Before/after hash values of evidence image.
+
+Findings is the section detailing how findings were obtained, like tools used, search strings, etc.
+	> The results of each action described in the procedural document.
+	> A timeline that puts the activities in perspective.
+
+Report conclusion ties all the other parts of the report together.
+	> Presents evidence either supporting or refuting the initial claim.
+	> Does not itself support or refute the initial claim.
+
+A digital forensics report is a formal document that presents the findings of a digital investigation, often related to
+cybercrime, internal audits, or data breaches.
+
+The report must be clear, structured, and contain all relevant details necessary for non-technical readers such as
+legal professionals or management.
+
+There really isn't a de-facto standard or format for forensics report writing.
+
+Formatting and layout options are up to the examiner/analyst, or they may be required to follow a template for
+organizational policies or jurisdictional court rules.
+
+A sample structure might look like:
+	> Title Page
+		- Basic details of the case name, report writer, contact info.
+
+	> Table of Contents
+		- Apply a structure to the report and offer a ToC at the top of the report.
+
+	> Overview
+		- Overview and a summary of the case.
+		- What has been asked for with respect to the investigation.
+
+	> Evidence
+		- Present the details of the evidence in our chain of custody.
+		- Description of hardware, make, model, serial numbers, description, condition, etc.
+
+	> Objectives
+		- Describe in detail what you were specifically being asked to do for this investigation.
+
+	> Forensic Analysis
+		- This is what you did as part of your forensics investigation.
+		- What tools you used.
+		- The steps taken, thoroughly documenting what you have done.
+		- Describe everything in granular detail.
+
+`	> Relevant Findings
+		- Detailed section of report.
+		- Include all artifacts and relevant findings on the computer.
+		- Analysis and Interpretation:
+			> Data Recovery
+			> User Actions
+			> Indicators of Compromise
+		- Each piece of evidence must offer a description that a layperson would understand.
+
+	> Timeline
+		- Create a timeline based on the forensic analysis, like access times and login attempts.
+
+	> Conclusion
+		- Summary of the investigation, process followed and the findings.
+		- Any recommendations for further investigation.
+
+Hardware tools are physical devices.
+
+Software tools run on these physical devices.
+
+Tool types include media capture and analysis, memory capture and analysis, application analysis, and network and
+capture analysis.
+
+Moving information from thought to electronic impulse and back goes through a number of doors.
+
+On an electronic level, data is not humanly readable.
+
+On the human level, the CPU can't function.
+
+Abstraction layers move up and down the spectrum.
+
+There are four necessary traits for tools used for digital forensics:
+	> Accuracy
+	> Verification Capabilities
+	> Consistency
+	> Usability
+
+If even one of these traits is missing, a tool is unsuitable.
+
+
+
+
+
+
+
+

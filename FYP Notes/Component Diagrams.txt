@@ -1,0 +1,63 @@
+A component diagram is a structural diagram in the Unified Modelling language.
+
+It shows how the components of a system are arranged are relate to one another.
+
+System components are modular units that offer a set of interfaces and encapsulate implementation.
+
+These diagrams illustrate how components are wired together to form larger systems, detailing their dependencies and
+interactions.
+
+Component diagrams are widely used in system design to promote modularity, and enhance understanding of system
+architecture.
+
+Component based diagrams in UML comprise several key elements, each serving a distinct role in illustrating architecture.
+
+
+
+1. Component
+	> Represents a modular part of the system that encapsulates functionality.
+	> Components can be software classes, collections of classes, or subsystems.
+	> Symbol - Rectangle with component stereotype.
+	> Function - Define and encapsulate functionality, ensuring modularity and reusability.
+
+
+
+2. Interfaces
+	> Specify a set of operations that a component offers or requires, serving as a contract between the component
+	  and its environment.
+	> Symbol - Circle for provided interface, half-circle or socket for required interface.
+	> Function - Define how components communicate with each other, ensuring that they can be developed and
+	  maintained independently.
+
+
+
+3. Relationships
+	> Depict the connections and dependencies between components and interfaces.
+	> Symbol - Lines and arrows.
+		 - Dependency is a dashed arrow, and indicates reliance.
+		 - Association is a solid line, and indicates a permanent relationship between components.
+		 - Assembly connectors connect a required interface of one component to the provided one of another.
+	> Function - Visualise how components interact and depend on each other, highlighting communication paths.
+
+
+
+4. Ports
+	> Represents specific interaction points on the boundary of a component where interfaces are provided or required.
+	> Symbol - Small squares on component boundary.
+	> Function - Allow for more precise specification of interaction points, facilitating detailed design and
+	  implementation.
+
+
+
+5. Artifacts
+	> Represent physical files or data deployed on nodes.
+	> Symbol - Rectangles with the stereotype "artefact".
+	> Function - Show how software artefacts like executables or data files, relate to the components.
+
+
+
+6. Nodes
+	> Represent physical or virtual execution environments where components are deployed.
+	> Symbol - 3D boxes.
+	> Function - Provide context for deployment, showing where components reside and execute within infrastructure.
+

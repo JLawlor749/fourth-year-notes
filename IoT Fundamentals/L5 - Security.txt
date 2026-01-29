@@ -1,0 +1,39 @@
+Security
+------------------
+
+Security is an essential part of modern networking, but is often overlooked by IoT vendors.
+
+Common IoT security issues include:
+	> Default passwords.
+	> Single level of access control.
+	> Large attack surfaces.
+	> Old software.
+	> Lack of encryption.
+	> Trusted computing.
+	> Poor responses from vendors when intrusions are found.
+
+When a user first logs in, we should make them change the default password.
+
+2FA should be enabled by default. Even though we should allow users to disable it, the default should be the most
+secure option.
+
+Normal and Admin users should be separated. This can be challenging, as IoT devices often have limited functionality,
+but it is worth it to implement stricter security for admin functions.
+
+Attack surfaces should be minimized. If attackers are presented with fewer targets, your system is more secure.
+
+Old software is filled with vulnerabilities.
+
+Old software should only be used if we're sure it's safe.
+
+Working with a low-end or constrained device is a poor excuse for compromising security in this way.
+
+Anything that could potentially be sensitive or private info should be encrypted.
+
+Even data that isn't private should be considered, in order to prevent side channels or network analysis.
+
+There are three types of encryption: Symmetric, Asymmetric, and Hashing.
+
+Symmetric ciphers are those in which the sender and receiver need to shared the same key in advance of the communication.
+
+Asymmetric ciphers have a public key and a private key.

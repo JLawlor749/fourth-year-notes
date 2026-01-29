@@ -1,0 +1,491 @@
+Forensics Flashcard Study
+-----------------------------------
+
+What is the definition of computer forensics?
+	> The practice of investigating digital systems to recover evidence and determine events that have occurred.
+	- The retrieval, analysis, and use of digital evidence in a civil or criminal investigation.
+
+
+
+What does it mean for a process to be "forensically sound"?
+	> It means that the process extracts the evidence without changing it and in such a way that it can be confirmed
+	  as legitimate, allowing it to be admissible in courts.
+	- The evidence must remain in its original state during acquisition and throughout the investigative process.
+
+
+
+What is the purpose of a Chain of Custody form?
+	> This form tracks the people that are in possession of pieces of evidence, and at what times.
+	- To account for and document everyone who has been in contact with the evidence.
+
+
+
+The more general term "____" is used to refer to any crime that involves computers and networks, including those that
+do not rely heavily on them.
+	> Computer-aided crime.
+	- Computer-related.
+
+
+
+What term is widely used to describe the entire field of digital investigation, including sub-disciplines like malware
+and mobile forensics?
+	> Digital Forensics.
+	- Digital Forensics.
+
+
+
+What is file carving?
+	> File carving is the process of retrieving deleted files from unallocated space in memory.
+	- A digital forensics technique to extract data from device storage by looking for patterns in raw data,
+	  without using the file system.
+
+
+
+File carving reassembles files from raw data fragments based on file content rather than "____" like filenames or
+timestamps.
+	> Metadata.
+	- Metadata.
+
+
+
+What is a file "header" in the context of file carving?
+	> The file header is the preceding pattern of a given file type, which indicates where the data that makes up
+	  the file begins.
+	- A sequence of bytes at the beginning of a file that can identify the file type and may contain metadata.
+
+
+
+A specific sequence of bytes at the very beginning of a file used to identify its type is known as a "____".
+	> File header.
+	- Magic number.
+
+
+
+What is a file "footer" in the context of file carving?
+	> A sequence of bytes at the end of a file that can identify the file type and indicates where the file stops.
+	- A sequence of bytes at the end of a file that indicates its conclusion.
+
+
+
+
+What is the hexadecimal magic number for a JPEG file?
+	> Don't remember.
+	- FFD8 (FF D8 FF).
+
+
+
+What is the hexadecimal magic number for a PDF file?
+	> Don't remember this either.
+	- %PDF (25 50 44 46).
+
+
+
+For which type of files does file carving work best?
+	> Smaller files, such as text documents or small images.
+	- Non-fragmented files.
+
+
+
+What is a major limitation of file carving regarding metadata?
+	> It is often impossible to retrieve the full file metadata unaltered.
+	- Carved files may lack metadata such as the original filename or creation date.
+
+
+
+Which file carving technique uses machine learning and statistical algorithms to look for patterns indicating language
+or file content?
+	> Automated carving.
+	- Content-based carving.
+
+
+
+Which popular file carving tools are mentioned as using file structure-based carving?
+	> Autopsy.
+	- PhotoRec and Scalpel.
+
+
+
+What is the primary goal of computer forensics in a structured investigation?
+	> To retrieve any evidence relating to the use of computers in the event being investigated.
+	- To find out exactly what has happened on a computing device and who was responsible.
+
+
+
+In digital forensics, what is the first type of evidence that must be collected due to its instability?
+	> CPU register and cache contents.
+	- The most volatile evidence, such as a RAM snapshot.
+
+
+
+What fundamental principle, which states that contact between two items results in an exchange, is central to forensic
+science?
+	> The Law of Equivalent Exchange.
+	- Locard's Exchange Principle.
+
+
+
+In digital forensics, trace evidence can be categorized into two types: class characteristics and "____" characteristics.
+	> Type.
+	- Individual.
+
+
+
+What does EXIF stand for?
+	> Exchange Information Format.
+	- Exchangeable Image File Format.
+
+
+
+What type of information does EXIF data primarily store?
+	> Information about media like pictures (camera settings, resolution, date taken, description) as well as things
+	  like filename.
+	- Metadata about a digital image or media file, embedded directly into the file.
+
+
+
+What is one forensic use of EXIF data related to location?
+	> EXIF metadata can contain location data about where a photo was taken.
+	- To reconstruct events using GPS tags and timestamps.
+
+
+
+What is one forensic use of EXIF data related to a suspects device?
+	> EXIF data sometimes includes the kind of device an image was taken or created with, which can tell investigators
+	  if a suspect took a photo, or someone else.
+	- To identify the specific device used, which helps link a suspect's phone or camera to photos.
+
+
+
+What is a significant limitation of relying on EXIF data for an investigation?
+	> EXIF data can be removed or destroyed by destructive processes like uploading files online.
+	- Some EXIF data features can be turned off, or the metadata can be removed when files are uploaded to
+	  web platforms.
+
+
+
+What is the technique of concealing a message within another message or physical object called?
+	> Steganography.
+	- Steganography.
+
+
+
+A forensics report must be clear and structured for both non-technical readers, like legal professionals, and "____".
+	> Jury members.
+	- Technical experts.
+
+
+
+What is the status of a "de-facto standard" for forensics report writing.
+	> There is no such thing.
+	- There isn't a de-facto standard or format; it often depends on organizational policies or court rules.
+
+
+
+What is a significant challenge when acquiring digital evidence from cloud services?
+	> Co-operation with cloud service providers, obtaining login details.
+	- It can be difficult to create a forensic image, and issues of logistics and jurisdiction can arise.
+
+
+
+Why is it problematic to copy a file to a new location without forensic protection?
+	> When this is done, a new file is created. It is different from the original, and has different metadata.
+	- The act of copying will alter the file's metadata, contaminating its evidentiary state.
+
+
+
+When locating evidence in filesystems, what three key elements is an investigator often trying to determine?
+	> Dunno.
+	- Means, Opportunity, and Motive.
+
+
+
+What is the primary duty of an expert witness in court?
+	> To lend their expertise on a particular topic.
+	- To help the court by giving an objective, unbiased opinion on matters within their expertise.
+
+
+
+According to the UK Criminal Procedure rules, an expert's duty to the court "____" any obligation to the person
+who hired them.
+	> Supersedes.
+	- Overrides.
+
+
+
+What common error involves focusing on a likely suspect and trying to fit evidence around that individual?
+	> Confirmation bias.
+	- A verification methodology.
+
+
+
+Experienced investigators, after identifying a prime suspect, will often try to do what with their own theory?
+	> Verify or validate.
+	- Prove themselves wrong.
+
+
+
+In the legal system, theories based on scientific truth are subordinate to what?
+	> Objective facts.
+	- Legal judgement.
+
+
+
+In common law countries, what is the standard of proof for criminal prosecutions?
+	> Beyond reasonable doubt.
+	- Beyond a reasonable doubt.
+
+
+
+What is the primary purpose of the concept of "admissibility" in court?
+	> It determines whether evidence is of a sufficient quality/legitimacy as to be considered in legal proceedings.
+	- To determine whether evidence is "safe" to put before a jury and will help in making a decision.
+
+
+
+What are the five issues a magistrate judge outlined for assessing the admissibility of digital evidence?
+	> Couldn't tell you if I wanted to.
+	- Relevance, Authenticity, Not hearsay (or admissible hearsay), Best evidence, and Not unduly prejudicial.
+
+
+
+To demonstrate that digital evidence is authentic, it is generally necessary to show it was acquired from a specific
+location and has remained "____" since collection.
+	> Safe, undamaged, unaltered.
+	- Unchanged.
+
+
+
+What is the "Best Evidence Rule"?
+	> In cases of conflicting evidence, the best or most authentic is taken.
+	- A rule that original required the original piece of evidence, but now generally accepts exact duplicates
+	  unless the authenticity of the original is questioned.
+
+
+
+Why might digital evidence be excluded if it contains hearsay?
+	> The hearsay could by untruthful or unduly biased.
+	- Because the author of the evidence is not present in court to verify its truthfulness.
+
+
+
+What is a common exception to the hearsay rule, especially relevant for digital evidence?
+	> If the author testifies in court, it can be admitted.
+	- Records of conducted activity, such as business records.
+
+
+
+Computer-generated data may not be considered hearsay at all because they do not contain "____".
+	> Opinions, brains.
+	- Human statements.
+
+
+
+What is direct evidence?
+	> Direct evidence is evidence that directly indicates a specific event.
+	- Evidence that directly establishes a fact.
+
+
+
+What is circumstantial evidence?
+	> Evidence that arises out of circumstance or coincidence.
+	- Evidence that may suggest a fact but does not directly prove it.
+
+
+
+A computer log showing a specific account was used to log in at a given time is "____" evidence that the account was used.
+	> Direct.
+	- Direct.
+
+
+
+A computer log showing a specific account was used is "____" evidence that the individual who owns the account was
+responsible.
+	> Circumstantial.
+	- Circumstantial.
+
+
+
+Under the Daubert standard, what is one of the criteria used to evaluate novel scientific evidence?
+	> Never heard of it.
+	- Whether the theory or technique can be (and has been) tested.
+
+
+
+What should an expert report do to strengthen its key conclusions?
+	> Offers suggestions on next steps and how to proceed.
+	- Present alternative scenarios and demonstrate why they are less reasonable or compatible with the evidence.
+
+
+
+What is the first section of a sample forensic report structure?
+	> Introduction.
+	- Introduction.
+
+
+
+Which section of a forensic report is intended for decision-makers who may not have had time to read the full report?
+	> Summary or Conclusion.
+	- The Examination Summary (or executive summary).
+
+
+
+In a forensic report's conclusion, it is important not to make statements about "____" or "____", but instead to be
+objective and based on fact.
+	> Opinion and Speculation.
+	- Innocence or Guilt.
+
+
+
+What is the court process where a digital investigator's qualifications are reviewed to determine if they can be
+accepted as an expert?
+	> Verification.
+	- Voir dire.
+
+
+
+What is mobile forensics?
+	> Mobile forensics is forensics carried out on mobile devices like smartphones.
+	- A specialty focused on recovering, analysing, and preserving digital evidence from mobile devices under
+	  forensically sound conditions.
+
+
+
+What is a critical component in a cellular network that manages mobile communications and routes calls?
+	> Cell tower, or base transceiver station.
+	- A Mobile Switching Centre (MSC).
+
+
+
+What component of a cellular network provides the radio interface for communication with specific user devices
+in a geographic area?
+	> Cell tower, or base transceiver station.
+	- A Base Transceiver Station (BTS).
+
+
+
+What does a SIM card (Subscriber Identity Module) primarily do?
+	> It uniquely identifies a mobile device on a cellular network.
+	- It securely stores information that identifies and authenticates a subscriber on a cellular network.
+
+
+
+According to SANS DFIR procedures, what is the first step if a mobile device is found on and unlocked?
+	> A RAM capture should be performed.
+	- Isolate the device from the network if possible (e.g., set to Airplane mode).
+
+
+
+What is the difference between a physical acquisition and a logical acquisition?
+	> A physical acquisition is acquiring a physical device, logical is just getting data or a capture from one.
+	- A physical acquisition is a bit-by-bit copy of the entire storage, while a logical acquisition extracts specific
+	  accessible data through the OS.
+
+
+
+When is a physical acquisition preferred over a logical one?
+	> When deleted files are involved and file carves are required.
+	- When deleted, hidden, or encrypted data needs to be recovered, or for deep forensic investigations requiring
+	  raw data.
+
+
+
+What is the base layer of the SWGDE Mobile Forensics Pyramid?
+	> No idea.
+	- Manual Examination.
+
+
+
+What level of the SWGDE pyramid involves extracting accessible files and data using APIs provided by the device's OS?
+	> No clue.
+	- Logical Acquisition.
+
+
+
+What is "Chip-Off" forensics?
+	> Never heard of it.
+	- A process that involves physically removing the memory chip from a device's motherboard to read its raw data
+	  directly.
+
+
+
+What is the most advanced and invasive technique in the SWGDE, involving a high-powered microscope to analyse memory
+cells?
+	> Scanning Electron Microscope.
+	- MicroRead.
+
+
+
+What does the NIST "Nascent" state for a mobile device represent?
+	> A device that is currently locked but may hold valuable data.
+	- The state of the device when it is newly powered on or has been reset to factory settings, containing
+	  minimal data.
+
+
+
+Which NIST generic state represents a fully operational device being actively used by the user?
+	> Active.
+	- Active State.
+
+
+
+In which NIST state is volatile data, like RAM contents, at the highest risk of being lost?
+	> Semi-active State.
+	- Semi-active State.
+
+
+
+Which NIST state describes a device that is powered on but in a standby or idle mode, conserving power?
+	> Quiescent State.
+	- Quiescent State.
+
+
+
+What versatile command-line tool allows communication between a computer and an Android device for debugging and
+forensic purposes?
+	> Android Studio.
+	- The Android Debug Bridge (ADB).
+
+
+
+What must be enabled on an Android device to allow the Android Debug Bridge to connect?
+	- USB Debugging.
+	> USB Debugging in Developer Options.
+
+
+
+This module is assessed with 50% Continuous Assessment (CA) and 50% "____".
+	> Exam.
+	- Exam.
+
+
+
+What course lecturer is identified in the "Week 1" presentation?
+	> Jonathan McCarthy.
+	- Jonathan McCarthy.
+
+
+
+What are the four necessary traits for tools used in digital forensics?
+	> Forensically sound, secure, safe, open-source.
+	- Accuracy, Verification Capabilities, Consistency, and Usability.
+
+
+
+In the Casey Anthony case, what type of digital evidence did investigators use to show premeditation, despite her
+efforts to erase it?
+	> Chat logs.
+	- Browser search history for terms related to chloroform.
+
+
+
+What does the "File System Acquisition" level of the SWGDE pyramid provide access to?
+	> The file system.
+	- The device's file system, including files, directories, and the OS structure, offering deeper visibility
+	  than a logical acquisition.
+
+
+
+Which type of mobile forensics acquisition in the SWGDE pyramid is considered non-invasive but provides a bit-by-bit
+copy of the entire physical memory?
+	> Physical acquisition.
+	- Physical acquisition (Non-invasive).

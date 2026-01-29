@@ -1,0 +1,36 @@
+Advanced Encryption Standard
+------------------------------------
+
+In the Advanced Encryption Standard, or AES, all operations are performed on 8-bit bytes.
+
+The arithmetic operations of addition, multiplication, and division, are all performed over the finite field.
+
+A field is a set in which we can do addition, subtraction, multiplication, and division, without leaving the set.
+
+Division is defined by the following rule: A/B = A(B^-1).
+
+An example of a finite field is the set Zₚ, consisting of all the integers {0, 1,..., p-1} where P is a prime number and in
+which arithmetic is carried out in modulo P.
+
+The algorithm takes in 16 bytes, or 128 bits, of plaintext. It processes this into an input state, a 4x4 matrix.
+
+it also takes a key of M bytes, which undergoes the Key Expansion process, giving a Round 0 key of 16 bytes.
+
+These two undergo initial transformation to give a new 4x4 matrix.
+
+The new matrix then goes through Round 1 processing, consisting of 4 transformations, along with the Round 1 key,
+which, like the Round 0 key, is from the Key Expansion process.
+
+This continues for N rounds until we get to Round N-1, which is 4 transformations with the Round N-1 key, and then finally
+we get Round N, which is 4 transformations with the Round N key.
+
+The final state is still 16 bytes, and is expanded into ciphertext.
+
+
+Parameters
+~~~~~~~~~~~~~~~~~~
+Key Size:
+Plaintext Block Size:
+Number of Rounds:
+Round Key Size:
+Expanded Key Size:

@@ -1,0 +1,93 @@
+Forensics 2022-23 Paper
+--------------------------------
+Q1. a) Part of the information that can be recovered from a mobile phone as forensic evidence is the list of Base
+Transceiver Stations, or mobile towers, that the phone has connected to recently. This information can be used to
+determine the location of a suspect at a particular time. As with all other forms of digital forensic evidence, we
+need to make sure that this data is not changed or updated as result of our investigation. Thus, the faraday bag is
+needed to ensure the phone does not connect to any new BT stations in transport.
+
+Q1. b) A CIRT is a team of individuals with relevant areas of expertise and experience to allow them to respond to
+an incidence of cyber crime, or other computer related mishap. This includes professionals such as technical staff, legal
+experts, public relations professionals, human resources, management, and more. The CIRT should have a process or procedure
+for responding to events, that outlines the steps that must be taken to react properly to an incident. A digital forensics
+professional can offer specific domain knowledge to such a team, providing computer security, knowledge of attacks
+and exploits, and triaging the incident. They can also recommend a specific course of action to rectify the incident,
+and conduct a post-resolution forensic investigation.
+
+Q1. c) EXIF stands for Exchangeable Image File Format. It's a metadata standard that stores information about a digital
+image or media file, embedded into the file itself. It is supported by many major camera manufacturers, and can store
+a wide variety of information, such as camera settings (like make, model, lens), image metrics (like pixel dimensions,
+resolution, colourspace), date and time info, location info, a thumbnail, description, and copyright.
+
+Q1. d) OSINT was created to offer a central location to find tools that can be used to gather intel and reconnaissance
+as part of cybersecurity research. It is a cybersecurity intel gathering tool. There are no shortages of free tools that
+can be used to gather public data, and OSINT is a collection of tools to make intel and data collection tasks easier.
+A digital forensics investigator can use OSINT to gather intelligence, and answer specific questions. Such questions
+include whether, based on usernames, a particular user is active on other platforms, for example. Other examples include
+reverse image lookups, the use of Google Search Operators to avoid or match specific conditions, and the use of specialty
+browsers like Tor or Shodan.
+
+
+
+
+Q2. a) Without the correct passwords and encryption keys, it would prove very difficult, or impossible, to get access
+to a device within a reasonable time frame. Many mobile devices are programmed to reset to factory settings, or to entirely
+lock access, after a certain number of incorrect password entry attempts. This could prove disastrous to an investigation,
+as key evidence and information could be rendered inaccessible, or inadmissible in court.
+
+Q2. b) When we say that a computer is storing a file, we mean two things. Firstly, there is an area in memory in which
+the ones and zeros are arranged to make up that data, and secondly, that the computer has reserved that area in memory for
+that data, so that it won't be overwritten. When we delete a file, the computer simply stops reserving that area, but the
+ones and zeros are still there. Files of specific types start and end with specific, recognizable patterns, dependent on
+the file type. With this information, an investigator can search for these patterns in the unreserved, or unallocated,
+memory on the computer. If they find a section of memory that starts and ends with the correct patterns for a specific kind
+of file, they can save that area using a hex editor and open it as a file.
+
+Q2. c) Autopsy is a digital forensics platform that offers a wide variety of different tools and programs for use in
+digital forensic investigations. It can read and open a disk image for analysis, and automatically carve deleted files
+and display their contents, as well as flagging encrypted or corrupted files, showing file metadata, easily displaying
+the contents of database files, parsing emails, and more. Autopsy uses a system of "ingest modules" which allows a user
+to select, upon opening a disk image, which tasks and tools they would like to have run on the data. The user can then
+view the data that was on the image, as well as the results of Autopsy's analysis.
+
+
+
+
+Q3. a) The order of volatility describes how some types of digital forensic evidence are considered more or less volatile
+than others. Essentially, some evidence is more likely to be subject to frequent or rapid changes, or to being lost
+entirely. Evidence like this should be prioritized, while evidence that is not likely to change or degrade on its own
+should be left until later. The classic order of volatility is
+	> CPU registers, cache
+	> RAM and running processes
+	> Network connections and routing tables
+	> Disk data and file systems
+	> Logs and remote monitoring data
+	> Archival media (e.g. backups)
+Crucial evidence could be accessed from some of the most volatile of these, like the RAM or the cache, such as timestamps
+and metadata, snippets of content like HTML pages, images, videos or other files, user information, and currently running
+program data.
+
+Q3. b) When working with a computer, the majority of data must be in its real form when it resides in memory. This is not
+always true, especially due to memory encryption techniques, but most things will be in their true form. This offers the
+perfect opportunity to analyse what we find in memory, and make sense of the operations and content. For example, something
+like malware will reside in its true form in memory, meaning that we can use a RAM capture or memory dump to get a clearer
+picture of it and analyse its operations. Additionally, the RAM capture will also include a list of currently running
+processes in memory, as well as the process ID and name. We can use this list to figure out which processes might be
+hijacked by malware, or even to determine what a suspect was doing on a computer at the time. Additionally, key pieces
+of data such as passwords or encryption keys may be stored in plaintext in memory, allowing investigators to make use
+of that information.
+
+Q3. c) The steps associated with the basic digital forensics model are Assess, Acquire, Analyse, and Report. The first
+step, assess, involves figuring out what kind of investigation is occurring, and within that task identifying roles,
+applicable laws and policies, and evidence. It then determines whether the case is internal, civil, or criminal, and
+the authority required depending on that, as well as whether the investigation will require written permissions, a
+subpoena, or a warrant. Next, acquire, is the process of actually collecting evidence. The necessary tools are identified,
+the data is collected, and forensic and archival copies are created. Thirdly, the analyse step involves analysis of
+data collected. This includes live, network, and static data. Finally, in the report stage, the evidence that was analysed
+is collected, prepared, and presented in a comprehensive report.
+
+
+
+
+
+

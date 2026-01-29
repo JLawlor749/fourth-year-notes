@@ -1,0 +1,64 @@
+Important Stuff
+----------------------------------
+
+Fermat's Little Theorem: If P is prime, then for any integer A, A^P = A(mod P)
+
+Euler's Totient: If A and N are relatively prime positive integers, then A^f(N)≡1(mod N), where f(N) is Euler's totient
+function. (A^(totient function(N)) is congruent with 1 mod(N)).
+
+Feistel Cipher: Symmetric encryption design, not specific algorithm. Used for DES. Data block is split, processed in rounds
+using a round function and sub-key, then the left and right halves are swapped. This allows for efficient encryption
+and decryption using the same logic.
+
+
+		L0			R0
+	       ----                    ----
+		 |			 |
+		 |			 |
+		 |	     K0    	 |
+		 |	    ----	 |
+		 |	     |           |
+		 ⊕<-------- F <---------|
+		 |			 |
+		 \                       /
+		  \                     /
+		   \                   /
+		    \                 /
+		     \               /
+		      \             /
+		       \           /
+		        \         /
+		         \       /
+		          \     /
+		           \   /
+		            \ /
+			    / \
+			   /   \
+			  /     \
+			 /       \
+			/         \
+		       /           \
+		      /             \
+		     /               \
+		    /                 \
+		   /                   \
+		  /                     \
+		 |			 |
+		 |			 |
+		 |			 |
+		 |	     K1    	 |
+		 |	    ----	 |
+		 |	     |           |
+		 ⊕          F <---------|
+
+
+
+One Time Pad: Uses a single-use truly random key, as long as the message. Theoretically unbreakable, hard to  distribute
+keys and to ensure they are truly random/used only once.
+
+Rail Fence Cipher: A simple transposition cipher that rearranges plaintext letters in a zigzag pattern across imaginary
+"rails" (rows) and then reads them off row by row to create the ciphertext.
+
+Row Transposition Cipher: Rearranges plaintext letters by writing them into a grid, as rows and columns, and then
+reading them out in a different order, typically column by column, based on a secret keyword.
+

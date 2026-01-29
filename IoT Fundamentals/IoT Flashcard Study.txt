@@ -1,0 +1,42 @@
+IoT Flashcard Study
+-----------------------------------
+
+
+
+What is the core concept behind the 'Internet of Things' (IoT)?
+	> Devices with processors and microchips in them to allow for more digital and connective functionality.
+	- Connecting everyday electronic devices, which contain cheap and low-power computers, to the internet
+	  for enhanced functionality.
+
+
+
+What are the two main values to consider at any point in an electrical circuit?
+	> Voltage and current.
+	- Voltage (V) measured in Volts, and Current (I) measured in Amperes.
+
+
+
+In the hydraulic analogy for electronic circuits, what does voltage represent?
+	> The amount of fluid.
+	- It represents the pressure of the water, or how hard it is being pushed.
+
+
+
+In the hydraulic analogy for electronic circuits, what does current represent?
+	> The amount of water being pushed.
+	- It represents the speed of the water, or how quickly it is moving.
+
+
+
+What is the primary function of a resistor in an electronic circuit?
+	> To reduce voltage.
+	- A resistor reduces the voltage and current of power flowing through it, acting like an electric speed bump.
+
+
+
+The degree of resistance (R) is measured in what unit?
+	> Ohms.
+	- Ohms.
+
+
+

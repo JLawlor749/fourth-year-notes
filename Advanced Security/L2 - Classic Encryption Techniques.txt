@@ -1,0 +1,255 @@
+Classic Encryption Techniques
+---------------------------------
+
+Symmetric encryption, or single-key encryption, was the only type in use prior to the development of public-key
+encryption in the 1970s.
+
+It remains by far the most widely used of the two types of encryption.
+
+Plaintext is the original message, and ciphertext is the coded message.
+
+Enciphering or encryption is the process of converting from plaintext to ciphertext.
+
+Deciphering or decryption is the restoration of the plaintext from the ciphertext.
+
+Cryptography is the study of encryption.
+
+Cryptographic systems or ciphers are the schemes use for encryption.
+
+Cryptanalysis describes the techniques used for deciphering a message without any knowledge of the enciphering details.
+
+Cryptology describes the areas of cryptography and cryptanalysis together.
+
+A simplified model of symmetric encryption is as follows:
+	> Billy uses the secret key shared by himself and Bobby to encipher some information.
+	> The ciphertext is transmitted.
+	> Bobby uses the deciphering algorithm with their shared key to get the plaintext.
+
+A cryptanalyst who wants the information the Billy is transmitting may acquire the ciphertext and attempt to decode it.
+
+Cryptographic systems are characterized along three independent dimensions:
+	> The type of operations used for transforming plaintext to ciphertext.
+		- Substitution
+		- Transposition
+
+	> The number of keys used.
+		- Symmetric, single-key, secret-key, conventional.
+		- Asymmetric, two-key, or public-key encryption.
+
+	> The way in which the plaintext is processed.
+		- Block cipher.
+		- Stream cipher.
+
+Cryptanalysis relies on the nature of the algorithm plus some knowledge of the general characteristics of the plaintext.
+
+This kind of attack exploits the characteristics of the algorithm to attempt to deduce a specific plaintext or to deduce
+the key being used.
+
+Attacker tries every possible key on a piece of ciphertext until an intelligible translation into plaintext is obtained.
+
+On average, half of all possible keys must be tried to achieve success.
+
+Here are some types of attack, and the information known to the cryptanalyst in each one.
+	> Ciphertext Only
+		- Encryption algorithm.
+		- Ciphertext.
+
+	> Known Plaintext
+		- Encryption algorithm.
+		- Ciphertext.
+		- One or more plaintext-ciphertext pairs formed with the key.
+
+	> Chosen Plaintext
+		- Encryption algorithm.
+		- Ciphertext.
+		- Plaintext message chosen by cryptanalyst, along with corresponding ciphertext.
+
+	> Chosen Ciphertext
+		- Encryption algorithm.
+		- Ciphertext.
+		- Ciphertext chosen by cryptanalyst, together with its corresponding decrypted plaintext.
+
+	> Chosen Text
+		- Encryption algorithm.
+		- Ciphertext.
+		- Plaintext message chosen by cryptanalyst, together with its corresponding ciphertext.
+		- Ciphertext chosen by cryptanalyst, together with its corresponding plaintext.
+
+There are two types of "secure" that we can say a scheme is.
+
+Unconditionally secure is when, no matter how much time an opponent has, it is impossible for them to decrypt the
+ciphertext simply because the required information is not there.
+
+Computationally secure means that the cost of breaking the cipher exceeds the value of the encrypted information.
+
+Alternatively, the time required to break the cipher exceeds the useful lifetime of the information
+	
+A brute-force attack involves trying every possible key until an intelligible translation of the ciphertext
+into plaintext is produced.
+
+On average, half of all possible keys must be tried to achieve success.
+
+To supplement the brute-force approach, some degree of knowledge about the expected plaintext is needed, and some
+means of automatically distinguishing plaintext from garble is also needed.
+
+A substitution technique is one in which letters of the plaintext are replaced by other letters, numbers, or
+symbols.
+
+If the plaintext is viewed as a sequence of bits, then substitution involves replacing plaintext bit patterns
+with ciphertext bit patterns.
+
+The simplest and earliest form of substitution cipher is the Ceaser cipher, named for Julius Ceaser.
+
+it involves replacing each letter of the alphabet with the letter standing a number of places down the alphabet
+from it, with that number being the key.
+
+If each letter is given a number from 0 to 25, then the algorithm can be expressed as (p + x) % 26, where "p" is the
+character in the plaintext, and "x" is the key number we're shifting it by.
+
+We use a modulo of 26 at the end to ensure that the number for our new letter remains between 0 and 25.
+
+A monoalphabetic cipher involves permutation, meaning a finite set of elements "S", which is an ordered sequence of
+all of the elements of "S" with each element appearing exactly once.
+
+If the "cipher" line can be any permutation of the 26 alphabetic characters, then there are 26! or 4x10^26 possible
+keys.
+
+This is 10 orders of magnitude greater than the key space for Data Encryption Standard.
+
+This approach is referred to as a monoalphabetic substitution cipher, because a single cipher alphabet is used
+per message.
+
+Monoalphabetic ciphers are easy to break due to letter frequency - even if the letters are moved around, they
+still reflect the frequency of the original alphabet.
+
+For example, "E" is the most common letter of the alphabet. This means that we could look at a message and deduce that
+whichever letter is most common might correspond to "E".
+
+The countermeasure for this is to provide multiple substitutes for a single letter.
+	> Digram
+		- Two-letter combination.
+		- Most common is "th".
+
+	> Trigram
+		- Three-letter combination.
+		- Most frequent is "the".
+
+The Playfair cipher is one of the best-known multiple-letter encryption ciphers.
+
+It treats digrams in the plaintext as single units, and translates them into ciphertext digrams.
+
+it is based on the used of a 5x5 matrix of letters, constructed using a keyword.
+
+it was invented by a British scientist, Sir Charles Wheatstone, in 1854.
+
+It was used as the standard field system by the British army in WW1, and the U.S. army and other allied forces in WW2.
+
+In order to get the key matrix, we set up a 5x5 grid. We fill it with the letters of the keyword, left to right, top to
+bottom, and then fill in the rest of the matrix with the remaining letters of the alphabet in order.
+
+	M  O  N  A   R
+	C  H  Y  B   D
+	E  F  G  I/J K
+	L  P  Q  S   T
+	U  V  W  X   Z
+
+The above matrix shows this carried out with the keyword "Monarchy".
+
+The Hill cipher was developed by the mathematician Lester Hill in 1929. Its strength is that it completely hides single
+letter frequencies. The use of a larger matrix hides more frequency information.
+
+A 3x3 cipher hides not only single-letter but also two-letter frequency information.
+
+This is strong against a ciphertext-only attack but easily broken with a known-plaintext attack.
+
+The way it works is as follows:
+	> The plaintext is split into vectors with a length equal to the dimension of the matrix.
+	> For example, with a 3x3 matrix, the plaintext is split into 3x1 vectors.
+	> Each vector is multiplied against the matrix, and is then recombined into ciphertext.
+
+Polyalphabetic substitution ciphers improve on the simple monoalphabetic technique by using different monoalphabetic
+substitutions as one proceeds through the plaintext message.
+
+All these techniques have the following features in common:
+	> A set of related monoalphabetic substitution rules is used.
+	> A key determines which particular rule is chosen for a given transformation.
+
+The Vigenère Cipher is one of the best known and simplest polyalphabetic substitution ciphers.
+
+In this scheme, the set of related monoalphabetic substitution rules consists of the 26 Ceaser ciphers, with shifts of
+0 through 25.
+
+Each cipher is denoted by a key letter which is the ciphertext letter that substitutes for the plaintext letter.
+
+To encrypt a message with this technique, a key is needed that is as long as the message.
+
+Usually the key is a repeating keyword.
+
+For example, if the keyword is "allmight" and the message is "go beyond plus ultra", it is encrypted as:
+	> Key: allmightallmighta
+	> Plaintext: gobeyondplusultra
+	> Ciphertext: gzmqguuwpwfecraka
+
+With the Vigenère autokey system, a keyword is concatenated with the plaintext itself to provide a running key.
+
+Even this scheme is vulnerable to cryptanalysis, because the key and plaintext share the same frequency distribution
+of letters, so a statistical technique can be applied.
+
+The One-Time Pad is an improvement to the Vernam cipher proposed by a Signal Corp officer, Joseph Mauborgne.
+
+You use a random key that is as long as the message, so that the key is not repeated.
+
+The key is used to encrypt and decrypt a single message, and then discarded.
+
+This scheme is unbreakable as it produces an output with no statistical relationship to the plaintext.
+
+Because the ciphertext contains zero information about the plaintext, there is no way to break the code.
+
+This technique also offers difficulties and complexities in the difficulty of making large quantities of random keys.
+
+It is, as such, used primarily for low-bandwidth channels that require top security.
+
+The Rail Fence cipher is the simplest transposition cipher. Plaintext is written down as a sequence of diagonals and then
+read off as a sequence of rows.
+
+	 mematrhtgpry
+	etefeteoaat
+
+The above example is done by starting on the top row with "M", then down and to the left to write "E", and then
+alternating.
+
+The ciphertext we end up with from this is: "MEMATRHTGPRYETEFETEOAAT".
+
+The row transposition cipher is a more complex transposition.
+
+You write the message in a rectangle, row by row, and read the message off, column by column, permuting the order of
+the columns.
+
+In this case, the key to the cipher is the order of the columns. If I have 4, and rearrange them to the order
+"3, 1, 4, 2" then the key to the cipher is 3142, and the ciphertext is "column 3 + column 1..." and so on.
+
+Steganography is a technique used to hide data within an image or another file.
+
+Other steganography techniques include:
+	> Character Marking:
+		- Selected characters of printed or typewritten text are overwritten in text.
+		- The marks are ordinarily not visible unless the paper is held at an angle.
+
+	> Invisible Ink:
+		- A number of substances can be used for writing but leave no visible trace until heat or chemicals
+		are applied to the paper.
+
+	> Pin Punctures:
+		- Small pin punctures on selected letters are ordinarily not visible unless the paper is held up under a 		  light.
+
+	> Typewriter correction ribbon.
+
+
+
+
+
+
+
+
+
+

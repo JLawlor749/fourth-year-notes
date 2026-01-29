@@ -1,0 +1,432 @@
+Advanced Security Flashcard Study
+----------------------------------------
+> The first answer to every question is my own attempt.
+- The second answer to each question is the correct flashcard answer.
+
+
+In the CIA Triad, what does Confidentiality assure?
+	> Confidentiality assures that information is not accessed by anyone who is not authorised.
+	- It assures that private or confidential information is not made available or disclosed to unauthorized
+	  individuals.
+
+
+
+In the CIA triad of security, what does Integrity assure?
+	> Integrity assures that private or confidential information is not altered or changed in any way by unauthorized
+	  individuals. This includes instances where the data itself is not changed, but is repeated or stopped.
+	- It assures that information and programs are changed only in a specified and authorized manner.
+
+
+
+In the CIA triad of security, what does Availability assure?
+	> Availability ensures that private data or information is always readily accessible to authorized individuals,
+	  and is not rendered inaccessible by system downtime or service issues.
+	- It assures that systems work promptly and service is not denied to authorized users.
+
+
+
+What is the primary characteristic of a passive security attack?
+	> The primary characteristic is that no changes are made to the information, data, or system, leaving these kinds
+	  of attacks very hard to detect.
+	- It attempts to learn or make use of information from the system but does not affect system resources.
+
+
+
+Name the two types of passive security attacks.
+	> Eavesdropping and Wiretapping.
+	- The two types are "release of message contents" and "traffic analysis".
+
+
+
+What is the primary characteristic of an active security attack?
+	> It attempts to make use of or disrupt system resources or data.
+	- It attempts to alter system resources or affect their operation.
+
+
+
+What type of active attack involves one entity pretending to be another?
+	> Masquerade attack.
+	- Masquerade.
+
+
+
+The active attack that involves the passive capture of a data unit and its subsequent retransmission to produce an
+unauthorized effect is known as _________ ?
+	> Retransmission attack.
+	- Replay.
+
+
+
+Which active attack involves altering, delaying, or reordering a legitimate message to produce an unauthorized effect?
+	> Reorder attack.
+	- Modification of messages.
+
+
+
+What is a "Denial of Service" (DoS) attack?
+	> An attack wherein attackers attempt to overwhelm the system and use up resources so that the service no longer
+	  works correctly for legitimate users.
+	- An active attack that prevents or inhibits the normal use or management of communications facilities.
+
+
+
+In classical encryption, how does a Rail Fence Cipher work.
+	> I have no idea.
+	- The plaintext is written down as a sequence of diagonals and then read off as a sequence of rows.
+
+
+
+What is the defining characteristic of a One-Time Pad cipher that makes it theoretically unbreakable.
+	> Keys are single-use, a new one is created every time making them completely unpredictable.
+	- It uses a random key that is as long as the message and only used once.
+
+
+
+What are the two practical difficulties of using a One-Time Pad?
+	> Generating new keys every single time is both time and resource-intensive, and the recipient doesn't know
+	  each new key that is generated.
+	- The difficulties include the secure distribution of the key and ensuring the key is truly random and only
+	  used once.
+
+
+
+How does a Row Transposition Cipher encrypt a message?
+	> It transposes the rows.
+	- The message is written into a rectangle row by row, and then read off column by column in an order determined
+	  by a key.
+
+
+
+In a Row Transposition Cipher, what constitutes the key?
+	> The column order to read from.
+	- The key is the permutation of the column order used to read the ciphertext.
+
+
+
+What is the core principle of the Vigenère Cipher?
+	> To be more secure than a cipher like the Ceaser cipher by using a key that is multiple letters long, and thus
+	  shifting each letter in the plaintext by a different amount.
+	- It is a polyalphabetic substitution cipher that uses a repeating keyword to select which Ceaser cipher to apply
+	  to each letter of the plaintext.
+
+
+
+What is the primary goal of diffusion in a block cipher?
+	> To ensure that small changes in the plaintext ripple out and effect the entire ciphertext.
+	- To dissipate the statistical structure of the plaintext over the bulk of the ciphertext, making the relationship
+	  between them more complex.
+
+
+
+What is the primary goal of confusion in a block cipher?
+	> To ensure that small changes in the plaintext ripple out and effect the entire ciphertext.
+	- To make the relationship between the ciphertext and encryption key as complex and involved as possible.
+
+
+
+What is the difference between a stream cipher and a block cipher?
+	> I have no idea.
+	- A stream cipher encrypts one bit or byte at a time, while a block cipher encrypts a fixed-size block of data as
+	  a whole.
+
+
+
+What does the Strict Avalanche Criterion (SAC) require for a cryptographic function?
+	> To ensure that small changes in the plaintext ripple out and effect the entire ciphertext.
+	- It requires that if a single input but is changed, each of the output bits should change with a probability
+	  of one half. 
+
+
+
+What does the Bit Independence Criterion (BIC) state?
+	> The value of each output bit should be wholly independent from each other output bit.
+	- It states that output bits J and K should change independently when any single input bit I is inverted.
+
+
+
+Describe the basic structure of a Feistel Cipher?
+	> I have no idea.
+	- It processes plaintext in blocks, splitting each block into two halves, and applying a round function to one.
+	  It then XORs the result with the other half, and swaps the halves over several rounds.
+
+
+
+What is a key advantage of the Feistel cipher structure regarding decryption?
+	> I have no idea.
+	> The encryption and decryption processes are very similar, requiring only the reversal of the subkey schedule.
+
+
+
+In the Cipher Block Chaining (CBC) mode of operation, how is each plaintext block processed before encryption?
+	> I have no idea.
+	- Each plaintext block is XORed with the ciphertext of the preceding block before being encrypted.
+
+
+
+How does the Cipher Block Chaining (CBC) handle the first block of plaintext?
+	> I don't know.
+	- The first plaintext block is XORed with a random data block called an Initialization Vector (IV).
+
+
+
+In public-key cryptography, what is achieved when Bob encrypts a message with Alice's public key?
+	> Confidentiality or Secrecy. Only Alice can decrypt it with her private key.
+	- Confidentiality is achieved, as only Alice, with her corresponding private key, can decrypt the message.
+
+
+
+In public-key cryptography, what is achieved when Bob encrypts a message with his own private key?
+	> Authentication, as only Bob could have encrypted the message with his own private key.
+	- Authentication (and integrity) is achieved, as anyone can use Bob's public key to decrypt it, proving the
+	  message came from Bob.
+
+
+
+How can both confidentiality and authentication be achieved using public-key cryptography?
+	> Bob encrypts the message with Alice's public key, and then his own private key. This way, Alice can decrypt
+	  the first part with Bob's public key, proving it came from him. Then she can use her own private key, meaning
+	  only she can read the message.
+	- The sender first encrypts the message with their own private key (for authentication) and then encrypts the
+	  result with the recipient's public key (for confidentiality).
+
+
+
+What is the purpose of the AddRoundKey transformation in AES?
+	> It encrypts the message with the current round's key.
+	- It XORs the current state matrix with a round key derived from the main cipher key.
+
+
+
+What does the ShiftRows transformation in AES do?
+	> It alters the order of the rows in the state matrix to add diffusion.
+	- It cyclically shifts the bytes in the last three rows of the state matrix by different offsets.
+
+
+
+What is the function of the SubBytes transformation in AES?
+	> It substitutes the bytes in the state matrix with corresponding ones from the pre-defined S-Box matrix.
+	- It performs a non-linear byte-for-byte substitution on each byte of the state matrix using a lookup table
+	  called an S-Box.
+
+
+
+What is the fundamental difference between a True Random Number Generator (TRNG) and Pseudorandom Number Generator (PRNG)?
+	> The PRNG is not truly random, and has some underlying pattern or predictable influence.
+	- A TRNG uses an unpredictable source like electronic noise as input, while a PRNG uses a deterministic algorithm
+	  and a seed to produce numbers that appear random.
+
+
+
+The Blum Blum Shub (BSS) generator is based on the computational difficulty of what mathematical problem?
+	> Factorisation of large numbers.
+	- It is based on the difficulty of factoring large integers, specifically the quadratic residuality problem.
+
+
+
+What is a brute-force attack on an encryption algorithm?
+	> An attack that involves attempting to use every possible permutation of an encryption key until a legible output
+	  is achieved.
+	- It involves systematically trying every possible key until an intelligible translation of the ciphertext into
+	  plaintext is found.
+
+
+
+What are the five essential ingredients of a symmetric cipher?
+	> No clue.
+	- Plaintext, encryption algorithm, secret key, ciphertext, decryption algorithm.
+
+
+
+What is steganography?
+	> Steganography is the practice of hiding information inside another format. For example, it can be used to hide
+	  text files within images.
+	- A technique used to conceal of the existence of a message or data within another, non-secret file or
+	  communication.
+
+
+
+What is the core mathematical operation used in the Hill Cipher?
+	> Matrix multiplication.
+	- It uses matrix multiplication to encrypt blocks of plaintext letters.
+
+
+
+How does the Playfair cipher differ from simple substitution ciphers?
+	> No idea.
+	- It encrypts pairs of letters (digrams) at a time, instead of single letters, using a 5x5 key matrix.
+
+
+
+List three requirements that a public-key cryptosystem must fulfil to be secure.
+	> Authentication, Confidentiality, Integrity.
+	- It must be computationally easy for a party to generate a key pair, easy for a sender to encrypt, easy for
+	  the receiver to decrypt, and computationally infeasible for an adversary to determine the private key from
+	  the public key or to recover the original message from the ciphertext.
+
+
+
+What does Fermat's Little Theorem state?
+	> Do not remember.
+	- If "p" is a prime number, then for any integer "a", the number (a^p - a) is an integer multiple of "p".
+
+
+
+What is the purpose of the Euclidean algorithm in cryptography?
+	> It is used to find the greatest common divisor of two numbers.
+	- It is an efficient method of computing the greatest common divisor (GCD) of two integers.
+
+
+
+What does Euler's Totient Theorem state?
+	> No clue.
+	- It states that if "a" and "n" are relatively prime positive integers, then a^ϕ(n)≡1(modn),
+	  where ϕ(n) is Euler's totient function. (a^(totient function(n)) is congruent with 1 mod(n)).
+
+
+
+What is the primary vulnerability of Double DES?
+	> Meet in the middle attacks.
+	- It is susceptible to a meet-in-the-middle attack, which reduces its effective key strength far below the
+	  combined strength of the two keys.
+
+
+
+How does a meet-in-the-middle attack work against Double DES?
+	> Don't remember.
+	- An attacker encrypts a known plaintext with all possible first keys, decrypts the corresponding ciphertext
+	  with all possible second keys, and looks for a match in the intermediate results.
+
+
+
+How does Triple DES (3DES) with two keys (EDE mode) work?
+	> No idea.
+	- It performs an Encryption with the first key, followed by a Decryption with the second key, and finally another
+	  Encryption with the first key (Encrypt-Decrept-Encrypt).
+
+
+
+What is the main characteristic of the Output Feedback (OFB) mode of operation?
+	> It provides feedback on the output, or feedback as an output.
+	- It operates like a stream cipher by generating a keystream from the Initialization Vector and the key,
+	  which is then XORed with the plaintext blocks; the ciphertext is not fed back into the process.
+
+
+
+What is modular arithmetic?
+	> Modular arithmetic is arithmetic performed within the bounds of a modulus, a number which cannot be exceeded
+	  by the results of operations. Instead, the result loops back around and starts with zero.
+	- It is a system of arithmetic for integers, where numbers "wrap around" upon reaching a certain value,
+	  known as the modulus.
+
+
+
+What is the function of the initial permutation (IP) in the DES algorithm?
+	> I don't know.
+	- It rearranges the bits of the 64-bit input plaintext block according to a predefined table before the first
+	  round of processing.
+
+
+
+What were rotor machines, such as the Enigma machine, used for?
+	> They were used in early cryptography, as a way to break advanced ciphers.
+	- They were sophisticated electromechanical stream ciphers used for encrypting and decrypting secret messages
+	  before and during World War II.
+
+
+
+What are the three broad categories of applications for public-key cryptosystems?
+	> No idea.
+	- Encryption/decryption (providing confidentiality), digital signatures (providing authentication), and
+	  key exchange (to securely establish session keys).
+
+
+
+What is the purpose of the Miller-Rabin algorithm?
+	> It is used as a primality test, to predict the primality of large numbers.
+	- It is a probabilistic primality test used to determine if a given large number is likely to be prime, which
+	  is crucial for generating RSA keys.
+
+
+
+According to the OSI Security Architecture, what is a "security attack"?
+	> Couldn't possibly say.
+	- Any action that compromises the security of information owned by an organization.
+
+
+
+According to the OSI Security Architecture, what is a "security mechanism"?
+	> Any mechanism that helps to prevent, slow, or otherwise hamper security attacks.
+	- A process or device designed to detect, prevent, or recover from a security attack.
+
+
+
+According to OSI Security Architecture, what is a "security service"?
+	> A service that makes the information owned by an organization more secure.
+	- A service that enhances the security of data processing systems and information transfers, intended to counter
+	  security attacks.
+
+
+
+The security service that assures a communication is authentic and that the claimed source is genuine is known as ____ ?
+	> Authentication.
+	- Authentication.
+
+
+
+What is the "Access Control" security service?
+	> Authorization.
+	- It is the ability to limit and control access to host systems and applications via communications links.
+
+
+
+The security service that protects against denial by either the sender or receiver of a transmitted message is called __ ?
+	> Time-outs.
+	- Nonrepudation.
+
+
+
+What is a "threat" in the context of any network security?
+	> Any agent or element that may affect system resources or information negatively.
+	- A potential for violation of security, which exists when there is a circumstance that could breach security
+	  and cause harm.
+
+
+
+What is the purpose of the security mechanism known as "Traffic Padding"?
+	> Traffic is padded with extra unnecessary content in order to prevent patterns from being observed in the
+	  flow of communications, which could be used to learn confidential information.
+	- It involves inserting bits into gaps in the data stream to frustrate traffic analysis attempts by masking the
+	  true volume of traffic.
+
+
+
+What does the "Notarization" security mechanism involve?
+	> Trusted parties can verify the contents or sender of a message.
+	- It involves the use of a trusted third party to assure certain properties of a data exchange, such as integrity,
+	  origin, or time.
+
+
+
+A security mechanism not specific to any particular OSI service or protocol layer is called a ____ security mechanism.
+	> General.
+	- Pervasive.
+
+
+
+In the context of pervasive security mechanisms, what is "Trusted Functionality"?
+	> When certain mechanisms are trusted to be functional.
+	- It is functionality that is perceived to be correct with respect to some criteria, such as being established
+	  by a security policy.
+
+
+
+What is a "Security Audit Trail"?
+	> It is a trail left behind to ensure that security interactions are valid and can be tracked.
+	- Data collected and potentially used to facilitate a security audit, which is an independent review and
+	  examination of system records and activities.
+
+
+
+
+
+

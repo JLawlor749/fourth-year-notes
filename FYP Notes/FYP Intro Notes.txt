@@ -1,0 +1,77 @@
+FYP Intro Notes
+------------------------
+
+ciaran.odriscoll@tudublin.ie
+
+Email him with the heading FYP plus our name + student number, to be added to the OneDrive.
+
+We are expected to do around 20 hours a week worth of work on this project.
+
+Our degree award mark is based on our year 4 mark.
+
+The project is worth 33% of our final year mark, meaning it's also worth 33% of our degree award.
+
+A project is:
+	> An individual piece of work.
+	> Includes documentation.
+	> Delivery and architecture of a system.
+	> Significant body of work.
+	> Presented at the project fair.
+
+By week 10 or 11 we need to have a working prototype and an interim report.
+
+Zotero is a research assistant tool recommended for the report.
+
+All websites and resources used should be tracked and logged for a bibliography.
+
+Grading is done by a "second reader" initially, which will be discussed with the supervisor.
+
+The final grading is done by the second reader, supervisor, and a monitor that adjusts scaling.
+
+The supervisor is not necessarily an expert in the technology being used, but lecturers who are experts can be queried.
+
+Documentation and clear presentation of ideas are one of the most important aspects.
+
+We do not copy things! We get "inspired" by the things other people do.
+
+A different and interesting idea carries some weight.
+
+Our project needs to be more "design and analyse" than "build and test".
+
+This is the link to a library of previous projects to take some inspiration from:
+	> www.tudublin.ie/library/cc/search-resources/dissertations-theses/
+
+We need to have a weekly log of work carried out and meetings held.
+
+This keeps track of what was delivered for a given week and what needs to be completed for the next week.
+
+This should be a high-level overview of what was completed, not super in-depth.
+
+There is a budget for specialized equipment, and there is equipment in stock.
+
+An equipment request needs to be filled out, signed by a lecturer and submitted to the school office.
+
+AI involvement in the project will be assessed on a traffic light system, wherein red is "no AI" and green is "full AI",
+with a few shades in the middle.
+
+All AI prompts used as part of the project must be tracked and included as part of an appendix.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

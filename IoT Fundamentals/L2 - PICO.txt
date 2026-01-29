@@ -1,0 +1,95 @@
+Raspberry Pi PICO
+------------------------
+
+Specs:
+	> RP2040 microcontroller (dual Cortex M0 @ 133MHz, 256KB RAM)
+	> 2MB of flash memory (disk space)
+	> 26 GPIO pins, SPI and I2C support
+	> Software FP support
+
+We are using the PICO 1, of which there are four models.
+	> The original PICO 1.
+	> The PICO H.
+	> The PICO WH.
+	> The PICO W.
+
+The PICO WH is the highest-end model, and the one we will be using.
+
+The ground pins are a negative connection, used to complete a circuit.
+
+The GPIO pins, those labelled with GP and then a number, are for general purpose input and output.
+
+MicroPython implements a large subset of Python 3.4 and parts of 3.5.
+
+It runs on the metal, i.e. on systems without an OS.
+
+It supports a wide range of hardware and microcontrollers, not just the PICO.
+
+It is open source and easy to install.
+
+We need to import a library called "machine" to interact with hardware.
+
+We can define an LED with code like:
+	> led = machine.Pin("LED", machine.Pin.OUT)
+
+Then we can interact with it with methods like:
+	> led.value(1)
+	> led.toggle()
+
+We can also read in information from hardware, alongside just outputting to it.
+
+We can read an analogue signal from a potentiometer (these need to go into an ADC port).
+
+We can then import the ADC class in MicroPython, and use the following code snippets:
+	> adc = ADC(1)
+	> value = adc.read_u16()
+
+This reads a value from the potentiometer into the "value" variable.
+
+Moving a servomotor is a little more complicated, and requires a lot more code.
+
+The PICO has no pins that can do an analogue output, but a digital pin can fake one using pulse width modulation.
+
+Only certain GPIO pins, which are marked with PWM, can perform this.
+
+Essentially, the pins can only do either no volts, or 3 volts. With PWM, we can rapidly switch between them.
+
+The proportion of a given length of time that we spend at zero or three gives us the voltage we're simulating.
+
+For example, if we spend an equal split at zero versus at three, we simulate 1.5 volts.
+
+The faster we can switch between them, the more accurately we can simulate the target voltage.
+
+First, we declare the servo:
+	> servo = PWM(Pin(27), freq=50, duty_u16=0)
+
+Then we can define a function that will allow us to move the motor.
+
+Into this function we can take the target angle, and the servo object, as parameters.
+
+We can write an assertion that the angle will be between 0 and 180:
+	- assert 0 <= angle <= 180
+
+Then we can define the minimum and maximum, which will be 1802 and 7864 respectively.
+
+The difference between them is then maximum minus minimum.
+
+Then we must define a duty cycle. The duty cycle will be:
+	> (angle / 180) * difference + minimum
+
+For example, if we want to go half way, to the 90 degree position:
+	> 90/180 = 1/2 = 0.5
+	> difference * 0.5 = 
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,221 @@
+Advanced Security Study
+------------------------------------
+
+Advanced Encryption Standard
+----------------------------------
+In the Advanced Encryption Standard, or AES, all operations are performed on 8-bit bytes.
+
+The arithmetic operations of addition, multiplication, and division are performed over the finite field.
+
+A field is a set in which we can do addition, subtraction, multiplication, and division without leaving the set.
+
+Division is defined as A/B = A(B^-1).
+
+An example of a finite field, one with a finite number of elements, is the set Z[p], consisting of all the integers
+from 0 to P-1, where P is a prime number, and in which arithmetic is carried out in Modulo P.
+
+So essentially a modulo P field for arithmetic, where P is a prime number.
+
+The AES process looks something like this:
+
+
+
+
+Plaintext - 16 Bytes (128 Bits)									Key - M Bytes
+		|											|
+		|											|
+		↓											↓
+	Input State (16 Bytes)									Key - M Bytes
+		|											|
+		|											|
+		↓											↓
+	Initial Transformation <-------------------------Round 0 Key (16 Bytes)----------------- Key Expansion
+		|											|
+		|											|
+		↓											↓
+State after Initial Transformation (16 Bytes)							Key Expansion
+		|											|
+		|											|
+		↓											↓
+	Round 1 (4 Transformations) <-------------------Round 1 Key (16 Bytes)----------------- Key Expansion
+		|											|
+		|											|
+		↓											↓
+	Round 1 Output State (16 Bytes)								Key Expansion
+		|											|
+		\											/
+		\											/
+		\											/
+		↓											↓
+	Round N-1 (4 Transformations) <-----------------Round N-1 Key (16 Bytes)--------------- Key Expansion
+		|											|
+		|											|
+		↓											↓
+	Round N-1 Output State (16 Bytes)							Key Expansion
+		|											|
+		|											|
+		↓											↓
+	Round N (3 Transformations) <-------------------Round N Key (16 Bytes)----------------- Key Expansion
+		|											|
+		|											|
+		↓											↓
+	Final Output State (16 Bytes)								Key Expansion
+		|
+		|
+		↓
+	Ciphertext (16 Bytes)
+
+
+ 
+For each round in AES, there are a few main steps taken:
+	> Substitute Bytes
+	> Shift Rows
+	> Mix Columns
+	> Add Round Key
+
+Decryption takes the opposite steps:
+	> Inverse Shift Rows
+	> Inverse Sub Bytes
+	> Add Round Key
+	> Inverse Mix Cols
+
+The first step, before any round, is always Add Round Key.
+
+The last round, which only has three transforms instead of 4, will ignore the Mix Columns step.
+
+The algorithm processes the entire data block as a single matrix during each round using substitutions and permutation.
+
+The provided input key is expanded using the key expansion algorithm, which returns an array of 44 32-bit words.
+
+The four stages of the transformations are:
+	> Sub Bytes - Uses an S-Box to perform a byte-by-byte substitution of the block.
+	> Shift Rows - A simple permutation.
+	> Mix Cols - A substitution making use of arithmetic operation over finite field.
+	> Add Key - The round key is use in a bitwise XOR operation with the current block.
+
+The cipher begins and ends with an Add Round Key stage.
+
+The cipher can be viewed as alternating operations of XOR encryption with the key, followed by scrambling the block,
+and so on.
+
+Each stage is easily reversible.
+
+The decryption algorithm makes use of the expanded key in reverse order, however the decryption is not identical to
+the encryption.
+
+The state is the same for both encryption and decryption, and the final round of both consists of only three stages.
+
+The S-Box and Inverse S-Box are a pair of tables of constant numbers, which are used for the Sub Bytes step.
+
+Essentially, the Hexadecimal representation of each byte, like EA or 5D, are found in the table, and their row and column
+are combined to make the new figure. So 5D becomes 4C, because it's on row 4, column C.
+
+This box was developed so that there would be a low correlation between input and output bits.
+
+For the shift row transformation, we take the 16 bytes in the form of a 4x4 matrix.
+	> The first row is unchanged.
+	> The second row has the 1st number become the last, and the other 3 move up a space each.
+	> The third row has the first 2 numbers become the last 2, and vice versa.
+	> The last row has the last number become the 1st, and the other 3 move down a space each.
+
+The mix columns transformation is far more complicated with the maths involved.
+
+In the first row, the number for column J is twice the number in the first row, XOR with three times the number in
+the second row, XOR with the number in the third row, XOR with the number in the last row.
+
+For the second row, it's the number in the first row, XOR with twice the number in the second, XOR with three times
+the number in the third, XOR with the number in the last row.
+
+For the third row, it's first row XOR second row, XOR with twice the number in third, XOR with triple the last number.
+
+In the last row, it's three times the first row number, XOR with second row, XOR with third, XOR with twice the
+number in the last row.
+
+Basically, it can be looked at as (2 x 1st) XOR (3 x 2nd) XOR (3rd) XOR (4th), and in each row, the 2 and 3 multipliers
+move a space back.
+
+Lastly, for the add round key transformation, the 128 bits of the current block are used in a bitwise XOR operation
+with the round key.
+
+Operation is viewed as a column-wise operation between the 4 bytes of a block column and one word of the round key.
+
+The series of inputs for a single AES round are:
+	> State Matrix at beginning of round.
+	> S-Box for substitute bytes transformation.
+	> Matrix of [{2,3,1,1}, {1,2,3,1}, {1,1,2,3}, {3,1,1,2}] for mix columns.
+	> The round key.
+
+AES Key Expansion sounds very difficult to understand, but really isn't so bad.
+
+It takes a four-word, or 16 byte key, as input, and produces an array of 44 words, or 11 keys.
+
+This is enough to provide a four-word key for the initial stage, plus the 10 standard cipher rounds.
+
+The key starting key is copied into the first four words of the expanded key. The rest is filled in based off that.
+
+Each added word W[i] depends on the preceding word, W[i-1], and the word four positions back, W[i-4].
+
+In three of four cases, a simple XOR is used, meaning W[i] = W[i-1] XOR W[i-4].
+
+Each word is made up of four 2-character groupings, like D8 or A4
+
+For a word whose position is a multiple of 4, a more complex series of operations takes place.
+	> First, RotWord, a function which moves the first part to the back, and moves the rest up a place each.
+	> Then, SubWord, which substitutes each part using the S-Box just like in the cipher itself.
+	> Lastly, RCON, a function whose output is different each time, is used to XOR with the word after SubWord.
+
+The resulting word from those three operations is then used as the next slot.
+
+AES decryption is different. The sequence of transformations differs, although the form of the key schedules is the same.
+
+This has the disadvantage that two separate software modules are needed for apps that require both encryption and
+decryption.
+
+For decryption, the first two stages of the round are switched, and the second two stages are also switched.
+
+Inverse Shift Rows affects the sequence of bytes but does not alter their contents, and does not depend on the contents
+when performing its operation.
+
+Inverse Sub Bytes does affect the contents, but does not alter byte sequence and does not depend on byte sequence to
+perform its transformation.
+
+Thus, these two operations can be interchanged harmlessly.
+
+The Add Round Key and Inverse Mix Columns both do not alter the sequence of bytes. If we view the key as a sequence of
+words, then both Add Round Key and Inverse Mix Columns operate on the State one column at a time.
+
+These two operations are linear with respect to the column input.
+
+AES can be implemented very efficiently on an 8-bit processor.
+
+Add Round Key is a bytewise XOR operation.
+
+Shift Rows is a simple byte shifting operation.
+
+Sub Bytes operates at the byte level and only requires a table of 256 bytes.
+
+Mix Columns requires matrix multiplication in the field GF(2^8), meaning all operations are carried out on bytes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

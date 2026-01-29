@@ -1,0 +1,42 @@
+Week 8 Log:
+This week I met again with my supervisor and finally got feedback on my questionnaire. He gave me some much-needed guidance and direction in terms of my questions and content, and I spent some time fully re-working the survey to have a better list of questions (narrower range of possible answers, more direction towards positive answers, i.e. "I want this feature" rather than "I hate that feature"). I also finally started writing some code - just a simple test project in Godot to try and set up some basic VR functionality and to test the screen capture that will be central to my project. The Git repo can be found here: https://github.com/JLawlor749/HoloDesk
+
+
+
+
+
+
+
+Week 9 Log:
+This week I skipped meeting my supervisor - I felt I hadn't done enough work, or at least enough to be worth talking about, to bother with the meeting. Instead, I kept chipping away at the Interim Report. It's a lot of work, certainly the longest report or essay that I've ever had to write. It's also engaging certain skills that I haven't had to use in a long time, like making use case diagrams. I also spent another while looking at my prototype, and have hit two very annoying snags. The first is that my VR headset doesn't seem to want to connect to my laptop. I tested again with another headset, which also failed to connect, leading me to conclude the issue must be my laptop. I spent several hours troubleshooting this, to no avail, but I have no real option other than to keep trying. The other snag is that the feature I was certain would lead to the most complexity in my project, that being the virtually simulated monitors, may actually end up being far easier than I had thought. As a result of this, I've been thinking of ways to put a different spin on the project, or add some other element of complexity. I'll discuss all of this with my supervisor at our next meeting on the 20th.
+
+
+
+
+
+
+
+Week 10 Log:
+This week is the week that our Interim Report submission is due, so that's what I've been doing non-stop. I've made my way through most of the report at this point, with chapters 1 through 4 being finished, as well as a part of 5. I am worried though, because there's a section on the prototype, which I haven't been able to do properly due to my VR headset-related hardware issues. I met with TUD's XR lecturer to get some help on this issue, and we tried with a total of 4 different VR headset, and got nowhere. There's an old desktop PC at home that was abandoned because it can't update to Windows 11, which will be my last hope for this issue. Aside from that, I'll need to buy a new computer. For now, I'll focus on finishing sections 5 through 7 of the interim report. Sections 4 and 5 have been really difficult, with a lot of tough design decisions to make. However, I think I've written enough for everything so far, so I'm sure it'll all be fine.
+
+
+
+
+
+
+
+Week 11 Log:
+This week was the one where the prototype code submission to go with the interim report was due. I ended up getting the old desktop PC that I mentioned previously set up, and spent the week feverishly trying to build a working prototype that would be good enough to show both my supervisor and second reader, to ensure they could both see that the project was working, and how it worked too. I got prototype functionality working for both the screens and
+shortcut system, as well as the basic VR interaction and locomotion systems, and a simple office-styled test environment. Currently the only virtual screen present just shows what's on the user's real life display, and
+functionality to add more screens is on the way. Additionally the shortcuts have been set up and can be used to open any executable on the user's computer, and are even able to run them with command line arguments.
+
+
+
+
+
+
+
+Week 12 Log:
+This was the week after the prototype code was due, and the week of my presentation. I was presenting early on Tuesday morning, so I went into college early, having booked a meeting room in advance to use for the Bongo call. I think my presentation went quite well, and I'm confident that I handled any questions sent my way to the best of my ability. The only minor issue was with the demonstration of the prototype - because my project is a VR project,
+and because it can't be run on my laptop, I wasn't able to do a live demo, and had to show some pre-recorded footage that I'd captured on my Quest 2 headset. Unfortunately the Quest 2 captures footage in a fairly low resolution,
+so it looked grainy in the demonstration, and it was also hard for me to narrate everything that happened in the video as it went. Overall, I think that despite these issues it was still well received.

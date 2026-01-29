@@ -1,0 +1,192 @@
+Forensics
+------------------------
+Being able to offer accountability for previous transactions with devices.
+
+This module is 50% CA, and 50% exam.
+
+CA is in 2 pieces, the first being 30% and the second being 20%.
+
+The first will be due the Sunday in week 6.
+
+Computer forensics is the retrieval, analysis, and use of digital evidence in a civil or criminal investigation.
+
+Any medium that can store digital files is a potential source of evidence for a computer forensics investigator.
+
+Computer forensics is a science because of the accepted practices used for acquiring and examining the evidence and
+its admissibility in court.
+
+Forensically sounds means that during the acquisition of digital evidence and throughout the investigative process, the
+evidence must remain in its original state.
+
+Moreover, everyone has been in contact with the evidence must be accounted for and documented in the Chain of Custody
+form.
+
+Crime Investigation
+	> Helps law enforcement solve cybercrimes such as hacking, fraud, terrorism, etc.
+	> Provides digital evidence that can be legally admissible in court.
+
+Corporate Security
+	> Detects insider threats, data leaks, and intellectual property theft.
+	> Investigates policy violations within organizations.
+
+Incident Response
+	> Identifies how cyberattacks occurred, the scope of damage, and the techniques used by attackers.
+	> Helps prevent future incidents by analysing weaknesses.
+
+Data Recovery and Integrity
+	> Recovers deleted, hidden, or encrypted files.
+	> Maintains the chain of custody so evidence remains authentic and untampered with.
+
+Legal and Compliance Needs
+	> Many industries require forensic practices for compliance.
+	> Ensures that organizations meet regulations like GDPR, HIPAA, etc.
+
+National Security
+	> Tracks cyber terrorism, espionage, and cross-border cyber threats.
+	> Provides intelligence for defence and security agencies.
+
+One of the main difficulties in defining computer crime is that situations arise where a computer or network was not
+directly involved in a crime but still contains digital evidence related to the crime.
+
+As an extreme example, take a suspect who claims to have been using the internet at the time of a crime. Although the
+computer played no role in the crime, it contains relevant digital evidence to the investigation.
+
+To accommodate this type of situation, the more general term "computer-related" is used to refer to a crime that involves
+computers and networks, including crimes that do not rely heavily on computers.
+
+Notably, some organizations, such as the US Department of Justice and the Council of Europe, use the term cybercrime to
+refer to a wide range of crimes that involve computers and networks.
+
+This course covers digital evidence as it applies to any crime, and delves into specific computer crimes that are
+defined by laws in various countries.
+
+The term "digital investigation" is used throughout this course to encompass any and all investigations that involve
+digital evidence, including corporate, civil, criminal, and military.
+
+The term "computer forensics" means different things to different people.
+
+Computer forensics usually refers to the forensic examination of computer components and their contents, like hard drives,
+compact disks, and printers.
+
+However, the term is sometimes used more loosely to describe the forensic examination of all forms of digital evidence,
+including data travelling over networks.
+
+To confuse matters, the term "computer forensics" has been adopted by the information security community to describe
+a wide range of activities that have more to do with protecting computer systems than gathering evidence.
+
+As the field has developed into several distinct sub-disciplines, including malware forensics and mobile device
+forensics, the more general term "digital forensics" has become widely used to describe the field as a whole.
+
+Agencies involved in digital forensics:
+	> FBI
+	> IRS
+	> US Secret Service
+	> Federal Law Enforcement Training Centre
+	> National White Collar Crime Centre
+	> INTERPOL
+	> High Tech Crime Investigation Association
+	> Computer Technology Investigators Network
+	> InfraGard
+	> An Garda Siochana
+	> New Scotland Yard
+
+File carving is a process used in digital forensics. It looks at extracting data from device storage without using
+the file system.
+
+Carving is extracting structured data from a larger set of raw data based on characteristics (patterns) in raw data.
+
+Carving is a powerful process to a digital investigation:
+	> Identifies and recovers from raw, deleted, or damaged file systems, memory, or swap space data.
+	> Recovering files not recognized by the OS or the filesystem.
+
+File carving is a digital forensics technique used to recover files from unallocated disk space, memory dumps, or corrupted
+storage when the file system structures (like FAT, NTFS, or ext tables) are missing or damaged.
+
+File carving is the process or reassembling files from raw data fragments on a disk or memory image, based only on the file
+content (signatures, headers/footers, patterns) rather than metadata like filenames, timestamps, or directory paths.
+
+A deleted file may no longer appear in the file system, but its raw data is still present on the disk.
+
+A forensic tool (e.g. Scalpel, Foremost, Autopsy, X-Ways) can carve that image out by recognizing the JPEG header
+and footer in raw binary data.
+
+This can be used for:
+	> Recovering deleted files.
+	> Data breach investigations.
+	> Memory forensics.
+	> Disaster recovery.
+
+Carving works best for non-fragmented files, and carved files may lack metadata. Highly fragmented files like large
+videos may be partially unrecoverable without context.
+
+A header is a sequence of bytes, in HEX or ASCII at the beginning of a file.
+
+It usually contains the magic number, and can identify the file type, and sometimes contains metadata, such as format
+version, size, encoding, etc.
+
+For example:
+	> JPEG starts with FFD8 (FF D8 FF)
+	> PDF starts with %PDF (25 50 44 46)
+	> ZIP starts with 50 4B 03 04
+
+A magic number is a sequence of bytes at the beginning of a file, with the purpose of identifying the file type.
+
+A footer is a sequence of bytes at the end of a file, indicating its conclusion.
+	> JPEG ends with FFD9.
+	> PDF ends with %%EOF.
+	> Some file types, like MP3, lack a fixed footer, requiring more structural analysis.
+
+Each file has a header and footer distinguishing the beginning and end of the file.
+
+Each file type will have a unique header and footer.
+
+The header can also be referred to as a magic number.
+
+On the disk we are trying to identify specific types of file headers and/or footers, and carve out blocks between these two
+markers.
+
+Not all files have standard footers, and these can be difficult to work with.
+
+Most file types have standard headers and footers.
+
+To recover data, an analyst can carve out everything between the JPEG header and footer, and recover the image.
+
+A HEX editor can be used to work with the disk/image.
+
+File Structure Based Carving uses the internal layout of a file.
+
+This looks at the header, footer, and file metadata.
+
+Popular carvers use this technique.
+
+Content-based carving is used to recover file data that has not been recovered from file structure carving.
+
+This uses machine learning and statistic-based algorithms to look for statistical patterns or signatures indicating
+language or file content.
+
+All possible data clusters are gathered that appear to be related to the image. These are used to try extract and find
+meaningful data and information.
+
+Potential issues include the following:
+	> No entry in file table for a given file.
+	> File just exists in unallocated space.
+	> File still exists in unallocated space but some sectors have been reused.
+	> Files may be incomplete.
+	> Majority of file carving programs will only recover files that are contiguous.
+	> Files on SSDs may be fragmented.
+	> Out of order and missing files.
+
+Scalpel is a file carving and indexing application that runs on Linux and Windows.
+
+PhotoRec is a file data recovery software designed to recover lost files including video, documents, and archives from hard
+disks.
+
+PhotoRec ignores the file system and goes after the underlying data, so it will still work even if your media's file
+system has been severely damaged or reformatted.
+
+Autopsy uses PhotoRec as part of its ingest modules. We will see this next week.
+
+
+
+
+

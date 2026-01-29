@@ -1,0 +1,72 @@
+IoT 2023-34
+--------------------------
+
+Q1. a) A device-to-device architecture is one in which devices connect directly to each other, with no cloud, server,
+or gateway in between. This kind of architecture is used for a mesh network, wherein nodes connect directly, dynamically,
+and non-hierarchically to as many others as possible, to achieve maximum network coverage.
+
+b) Device-to-cloud and device-to-gateway. For the first, devices connect directly to the cloud, or a backend server,
+which assists with communication and processing, and any other heavy tasks. The second is similar, except devices
+communicate with a gateway, which then communicates on their behalf with the cloud.
+
+c) Advantages are redundancy and efficiency for routing and data transit, ease of network entry, and resource sharing.
+Disadvantages are increased complexity, higher power consumption on devices, and lessened ability for complex processing.
+
+
+
+Q2. a) Arduino:
+		> Affordability: Very cheap.
+		> Extensibility: Hardware functionality can be expanded with addon boards called shields.
+		> Range of Models: Huge variety available, provides developers with flexibility.
+
+       Raspberry Pi:
+		> High Performance: Single-board computer, can handle more intensive tasks.
+		> Full OS Environment: Runs a full Linux OS.
+		> Integrated High-Speed Connection: Robust built-in networking.
+
+b) I. SoC is an integrated chip that combines all of the key components of a computer system, such as CPU, memory,
+wireless connectivity. These are key components in modern IoT devices.
+
+II. A capacitor is like a miniature rechargeable battery. It builds up a small charge and then releases it.
+
+III. An inductor is like a capacitor, except that it stores the stored energy in a magnetic field instead of electrical.
+
+IV. A motor controller is used to control motors on IoT devices, and allows for small and delicate movements.
+
+
+c) Pulse-width modulation effectively works by turning a device on and off really quickly. Using digital output pins,
+the only outputs can be 1 or 0, effectively 100% or 0%. With PWM, a device can be switched between 0 and 100 rapidly,
+allowing it to simulate lower outputs by the time that the system is at 100. For example, if it spends only 1/3 of the
+time at 100%, it can simulate 33%. The duty cycle is effectively the percentage of the time that the device is at 100%,
+measured by (pulse width/total period)*100%. Frequency is how often or how quickly it switches back and forth between 100%
+and 0%. Higher frequencies can give a smoother operation.
+
+
+
+Q3. a) I. WiFI      II. Internet Protocol or IP      III. TCP or UDP      IV. MQTT
+
+b) Fog computing contrasts from cloud computing in that it is decentralized. It uses edge devices to carry out a substantial
+amount of computing, rather than a central server or datacentre. It is intended for distributed computing where
+numerous peripheral devices are connected to a cloud. As much processing as possible is done onboard rather than remotely.
+
+c) I. A broker is a piece of software that sits in the middle of an MQTT setup, it takes messages from publishers, and
+sends those messages to the subscribers which have subscribed to the topic of that message.
+
+II. A publisher gathers or generates the information that is being sent. It assigns each message a topic, and sends it
+to the broker.
+
+III. The subscriber subscribes to topics that it wants to receive relevant messages for, and is then sent those messages
+by the broker.
+
+
+
+Q.4 a) 
+
+b) Linear discriminant analysis, principle component analysis, autoencoders.
+
+c) Statistical correlation is the measure of mathematical similarity between two variables. It can be used in IoT to
+measure the similarities between sensor readings on multiple devices, for example.
+
+
+
+Q5. 

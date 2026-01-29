@@ -1,0 +1,171 @@
+L3 - Networking
+---------------------
+
+Networks are structured as a series of layers, wherein each layer takes data from the one above, packages it into
+a datagram format, and passes it to the layer below.
+
+The top layer is expected to consume the data in some way, and the bottom layer, representing the hardware, passes
+raw bits along the physical network medium.
+
+This model is called the OSI networking model.
+
+There are two main stacks for networking - TCP/IP and UDP/IP.
+
+These are the actual implementations of the OSI model as it exists in modern machines.
+
+		UDP / TCP
+	    Internet Protocol
+	     Ethernet and ARP
+	     Ethernet Driver
+	    Ethernet Hardware
+
+Each of these protocols have their own addressing schemes:
+	> Ethernet - MAC Address
+	> WiFi - MAC Address
+	> IP - IP Address
+	> TCP - Port Number
+	> UDP - Port Number
+
+When you type "google.ie" into your browser, a number of steps happen behind the scenes.
+	> A DNS lookup gets the IP address.
+	> A HTTP request is created.
+	> The request is packaged into a TCP segment.
+	> The segment is packaged into an IP packet.
+	> The packet is packaged into a WiFi frame.
+	> The frame is transmitted over the network.
+
+In order for our PICO device to connect to the network, it first needs to scan for one.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	from network import WLAN
+
+	wifi = WLAN(WLAN.IF_STA)
+	wifi.active(True)
+
+	security_type = {
+		0: 'None',
+		1: 'WEP',
+		2: 'WPA-PSK',
+		3: 'WPA2-PSK',
+		4: 'WPA/WPA2-PSK',
+		5: 'WPA2 Enterprise',
+		6: 'WPA3-PSK',
+		7: 'WPA2/3-PSK',
+		8: 'WAPI-PSK',
+		9: 'OWE',
+	}
+
+	for (ssid, bssid, channel, rssi, security, hidden) in wifi.scan():
+		ssid = ssid.decode('utf-8')
+		security = security_type[security]
+		print('Found network "{ssid}" using channel "{channel}" with security "{security}".')
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The above code snippet shows the process of scanning for networks and printing all those found.
+
+This is a good sanity check to ensure that our PICO can actually detect the phone WiFi hotspot we'll need to use.
+
+WiFi uses radio configurations called channels. Unfortunately the PICO only supports a subset of the channels that
+a typical laptop or phone would. In particular, it doesn't work with 5GHz channels, only the older 2.4GHz.
+
+In order to connect to our chosen network, we then use the following code snippet:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	from network import WLAN
+
+	wifi = WLAN(WLAN.IF_STA)
+	wifi.active(True)
+
+	ssid = '...'
+	password = '...'
+
+	wifi.connect(ssid, password)
+
+	time.sleep(5)
+
+	if wifi.status() != 3:
+		print("Could not connect to WiFi)
+	else:
+		tudublin_dns = socket.getaddrinfo("tudublin.ie", 443)
+		tudublin_ip = tudublin_dns[0][-1][0]
+		print('The IP address for the TU Dublin website is "{tudublin_ip}".')
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What this code should do is attempt to connect to the network, and then wait 5 seconds to make sure the connection
+has gone through.
+
+Then it will attempt to access the TU Dublin website, as a sanity check.
+
+However, there is a simpler way to go about connecting to a network:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	def connect(wifi_obj, ssid, password, timeout=10):
+		wifi_obj.connect(ssid, password)
+
+		while timeout > 0:
+			if wifi_obj.status != 3:
+				time.sleep(1)
+				timeout -= 1
+			else:
+				return True
+
+		return False
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Then, once we have that done, we can create something like this, which is a very basic HTTP server.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	port_number = 80
+	
+	if not connect (wifi, ssid, password):
+		print('WiFi couldn't connect.')
+	else:
+		s = socket.socket()
+		s.bind(('0.0.0.0', port_number))
+		s.listen()
+		ip = wifi.ifconfig()[0]
+		print('Listening on IP "{ip}".')
+
+		while True:
+			cxn, addr = s.accept()
+			print('Connected to "{addr}".')
+			data = cxn.recvfrom(200)
+			print(data, len(data))
+			cxn.close()
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The only thing missing from the previous code is using the "cxn.sendall()" method to send some raw python bytes back
+to the client.
+
+Python distinguishes between the string and bytes datatypes.
+
+There are a number of functions and methods for dealing with raw byte data in python:
+	> Bytes to string: my_bytes.decode()
+	> String to bytes: my_string.encode()
+	> Bytes to int: Each byes can be indexed into to get an integer.
+	> Int to bytes: Create a list of integers in the range [0, 255], and then pass to bytes().
+
+There are a number of other methods useful for dealing with strings any bytes:
+	> Slicing - [x:y] (inclusive of x, exclusive of y).
+	> Index - .index(query), which finds the index of the first instance of the query.
+	> Starts With - .startswith(query), which returns true if the object starts with the query.
+	> Ends With - .endswith(query), which returns true if the object ends with the query.
+
+
+
+
+ 
+
+
+
+
+
+

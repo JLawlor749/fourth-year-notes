@@ -1,0 +1,50 @@
+Unit Tests
+------------------------
+Unit tests are very low level and close to the source of an application. They involve testing
+individual methods and functions of the classes, components, or modules used by your software.
+Unit tests are generally quite cheap to automate and can be run quickly by a continuous integration server.
+
+
+Integration Tests
+------------------------
+Integration tests check how different modules or components of the software work together. It's
+important because even if individual parts work perfectly in isolation, they might face issues when
+interacting with one another. This kind of test ensures that data flows correctly between modules
+and that they communicate seamlessly.
+
+
+System Tests
+------------------------
+System testing is when you test the software as a system. This stage checks whether the entire system
+functions as expected in a real-world environment. It includes both functional and non-functional
+tests to ensure that the software meets customer need. This means a full end-to-end testing of the
+software, verifying both functional and non-functional requirements.
+
+
+Acceptance Tests
+------------------------
+Acceptance testing, also known as user acceptance testing, is the final test phase before a full release.
+In this phase, the customers or end-users verify if the software meets their needs and expectations.
+UAT is crucial because it verifies the software is ready for production. It's  the last chance
+to catch any overlooked issues before deployment.
+
+
+White Box Testing
+------------------------
+White box testing is a technique which involves testing the internal structure and workings of a software
+application. The tester has access to the source code and uses this knowledge to design test cases
+that can verify the correctness of the software at the code level. This kind of testing can be started
+during the software development lifecycle, and can detect defects that other kinds cannot.
+
+
+Black Box Testing
+------------------------
+Black box testing is a type of testing in which the tester is not concerned with the internal knowledge
+or implementation details of the software but rather focuses on validating the functionality based on
+the provided specs or requirements. This kind of test is executed from the user's point of view,
+used to find ambiguity or contradiction in the functional specs.
+
+
+
+
+

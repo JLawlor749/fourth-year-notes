@@ -1,0 +1,140 @@
+Enterprise App Development
+-------------------------------------
+
+50% Exam, 50% CA Grade.
+	> 30% Class Assessment, 20% Project.
+
+The exam will be a written exam at the end of the semester, and weekly labs.
+	> Those labs make up the 30% class assessment grade.
+	> There will be lab content, plus a test at the end.
+
+The final project will be about NODE and AJAX.
+
+Lab activities need to be completed IN the lab.
+
+If we miss one lab, that lab's grade will be the average mark of our top 7 lab grades.
+
+A lot of this module is about the backend, we will learn about NODE, authentication, web tokens, etc.
+
+JavaScript is a dynamic scripting language.
+
+It is a high level language that executes at runtime.
+
+It is dynamically typed, meaning that variables need only support operations performed on them at runtime.
+
+TypeScript is a strict syntactical superset of JavaScript, and adds optional static typing to the language.
+
+Originally it was only executed client-side, by the web browser.
+
+Now, Node.js allows you to run JavaScript on the server-side.
+
+Some databases like MongoDB and CouchDB also use JavaScript.
+
+JavaScript displays interactive content, performs animations of page elements, and validates input from a form
+before submitting to a server.
+
+It can also load new page content, or submit data to the server via AJAX, without reloading the page.
+
+It transmits information about user browsing activities too, like web analytics and ad tracking.
+
+Script code is embedded in the web page, which means its viewable to the world.
+
+For security reasons, scripts are limited in what they can do.
+
+For example, they can't directly access a client's hard drive.
+
+Since it is design to run on any machine, scripts also don't contain platform-specific commands.
+
+The user can also block JavaScript, so input validation must be performed on the server too.
+
+JavaScript is a case-sensitive language, can change HTML content, attributes, and styles, and can show and hide HTML.
+
+JavaScript can be written inline in HTML using the <script> tag, but it can also be written in its own file and loaded
+by the HTML.
+
+To use an external script like this, the script tag is also used, but instead of having JS code in it, it has an
+"src" attribute which contains the filepath to the JS script file.
+
+To access a HTML element from JavaScript, you can use the document.getElementById(id) method.
+
+The innerHTML property defines the HTML content.
+
+The assignment operator, "=", assigns a value to a variable. Variables are defined with the "var" keyword.
+
+A variable declared without a value will have the "undefined" value.
+
+If you re-declare a JS variable, it will not lose its value.
+
+If you assign a value to a variable that has not yet been declared, it will automatically be a global variable.
+
+Global variables should be avoided as they can be overwritten by other scripts.
+
+JS has dynamic types, meaning the same variable can be used to store a string, a number, a Boolean, or Null.
+
+JS numbers can be written with or without decimals, and the Number.isInteger() method can be used to tell if a number
+is an integer or not. The isNaN() method can be used to verify if a value is not a number.
+
+Strings are text declared inside quotes, and Booleans are defined simply as true or false.
+
+The equality operator, the double equal sign ==, is used to compare values. The interpreter implicitly tries to
+convert the values before comparing them.
+
+The identity operator, the triple equals ===, does not convert the values before comparing.
+
+Code in JS uses functions and events. Code can be made to execute when the page loads, or when another event occurs,
+such as when a user clicks a button.
+
+If we put JavaScript code inside a function, we can call that function when an event occurs.
+
+Arrow functions allow a short syntax for writing function expressions.
+
+You don't need the function or return keywords, or the curly brackets.
+
+Arrow functions do not have their own version of the "this" keyword.
+
+They are not well suited for defining object methods.
+
+Arrow functions are not hoisted. They must be defined before they are used.
+
+Using const is safer than using var, because a function expression is always a constant value.
+
+You can only omit the return keyword and the curly brackets if the function is a single statement.
+
+For example:
+
+	const x = (x, y) => {return x * y};
+
+
+An event handler is a predefined JS property of an object, in most cases an element in the document, that is used
+to handle an event on a web page.
+
+An event is something that happens when the viewer performs some sort of action, such as clicking a mouse button,
+moving the mouse over a link, etc.
+
+To use an event handler, you can add it as an additional attribute to a HTML tag.
+
+The only different between an event handler attribute and a HTML attribute is that you can add JS code inside an
+event handler attribute rather than just an attribute value.
+
+If the code you want to use is long, you may wish to put it in a function.
+
+You can also tie an event to an element with the script code, with document.getElementById(), for example.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

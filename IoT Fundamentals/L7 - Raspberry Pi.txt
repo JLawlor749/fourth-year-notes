@@ -1,0 +1,69 @@
+Raspberry Pi
+-------------------------------
+
+The Raspberry Pi is a single-board computer, which runs Linux operating systems.
+
+The Pi's GPIO facilities are similar to those on the PICO which we have been using for labs so far.
+
+A number of GPIO libraries exist for the Pi, and support a wide range of languages. The actual GPIO is controlled from
+userspace via "ioctls" into a kernel module.
+
+Both low-level and high-level APIs have been implemented on top of this for a range of languages.
+
+We can use code like this:
+
+
+	import gpiozero as gp
+
+	my_led = gp.LED(17)
+
+	my_led.on()
+	my_led.off()
+
+
+This code assigns the LED wired to pin 17 into the variable "my_led" and turns it on and off.
+
+We can also use pulse-width modulation to control the brightness of an LED:
+
+
+	import gpiozero as gp
+
+	led = gp.PWMLED(12)
+
+	led.value = 0.5
+
+
+Additionally, we can use different kinds of inputs to control LEDs:
+
+
+	import gpiozero as gp
+
+
+	button = gp.Button(17)
+	led = gp.LED(2)
+
+	def pressed():
+		led.on()
+
+	def released():
+		led.off()
+
+	button.when_pressed = pressed
+	button.when_released = released
+
+
+The code above defines two functions, for pressing and releasing the button. Pressing it turns the LED on, and releasing
+it turns the LED off.
+
+It also defines callbacks for the button, such that it will call the correct functions when pressed and released.
+
+MQTT is a standard communications protocol for IoT devices.
+
+It features a publisher, which broadcasts information to a broker, which can then send information on to a subscriber.
+
+A subscriber device can send a message to the broker to say it is interested in receiving its information from now on,
+at which point the broker will add it to a list.
+
+From then on, when the publisher gives the broker new information on that topic, it will be forwarded to all subscribers
+on that list.
+

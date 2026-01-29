@@ -1,0 +1,136 @@
+Block Ciphers and the Data Encryption Standard
+--------------------------------------------------------
+
+A Stream cipher encrypts a digital data stream one bit at a time.
+
+I the ideal case, a one-time key would be used, but as the one-time Vernam cipher is difficult to use, we sometimes
+use other kinds of keys.
+
+If the cryptographic keystream is random, where the keystream is as long as the bit stream, the cipher is unbreakable
+by any means other than acquiring the keystream.
+
+For practical reasons, the bit stream generator must be implemented as an algorithmic procedure so that the
+cryptographic bit stream can be produced by both users.
+
+It must be computationally impractical to predict future portions of the bit stream based on previous portions, and
+the two users need only share the generating key for each to produce the keystream.
+
+With a Block cipher, a block of plaintext is treated as a whole, and used to produce a ciphertext block of equal length.
+
+Typically a block size of 64 or 128 bits is used. As with a stream cipher, the two users share a symmetric encryption
+key.
+
+The majority of network-based symmetric cryptographic applications make use of block ciphers.
+
+The Feistel cipher is a cipher that alternates substitutions and permutations.
+
+It is the practical application of a proposal by Claude Shannon to develop a product cipher that alternates confusion
+and diffusion functions.
+
+It is the structure used by many significant symmetric block ciphers currently in use.
+
+Diffusion is the statistical measure of how the plaintext is dissipated into long-range statistics of the ciphertext.
+
+This is achieved by having each plaintext digit affect many of the ciphertext digits.
+
+Confusion seeks to make the relationship between the statistics of the ciphertext and the value of the encryption key
+as complex as possible.
+
+Even if the attacker can get some handle on the statistics of the ciphertext, the way in which the key was used to produce
+that ciphertext is so complex as to make it difficult to deduce the key.
+
+The Feistel cipher has a number of design features:
+	> Block Size: Larger block sizes mean greater security but reduced encryption/decryption speed.
+	> Key Size: Larger keys mean greater security but decreased speed.
+	> Number of Rounds: The essence of Feistel is that a single round offers minimal security, improved by more rounds.
+	> Subkey Algorithm: Greater complexity in this algorithm should lead to greater difficulty for cryptanalysis.
+	> Round Function F: Greater complexity generally means greater resistance to cryptanalysis.
+	> Fast Encryption/Decryption: Speed of execution of algorithm is a concern.
+	> Ease of Analysis: If it can be explained clearly and concisely, it can be analysed more easily.
+
+A Feistel cipher uses a round function. It takes two inputs, a data block and a subkey, and it returns one output
+of the same size as the data block.
+
+In each round, the round function is run on half the data to be encrypted, and the output is XORed with the other
+half of the data. This is repeated a fixed number of times, and the final output is the ciphertext.
+
+An important advantage of these as compared to other cipher designs is that the entire function is guaranteed to be
+invertible, even if the round function itself isn't.
+
+The Data Encryption Standard, or DES, was issued in 1977 by the National Bureau of Standards, now NIST, as Federal
+Information Processing Standard 46.
+
+It was the most widely used encryption scheme until the introduction of Advanced Encryption Standard, AES, in 2001.
+
+The algorithm itself is referred to as the Data Encryption Algorithm, or DEA.
+	> Data are encrypted in 64-bit blocks using a 56-bit key.
+	> The algorithm transforms 64-bit input in a series of steps into a 64-bit output.
+	> The same steps, with the same key, are used to reverse the encryption.
+
+In the DES algorithm, there are 16 identical stages of processing, called rounds. There is also an initial
+permutation, IP, and a final permutation, FP.
+
+Before the main rounds, the block is divided into 32-bit halves and processed alternately, using the Feistel scheme.
+
+In this scheme, we operate on four stages:
+
+1. Expansion: The 32-bit half block is expanded to 48-bits using the expansion permutation. This duplicates half of
+the bits. The output then consists of eight 6-bit pieces, each holding a copy of 4 corresponding input bits, plus a
+copy of the immediately adjacent bit from the input pieces to either side.
+
+2. Key Mixing: The result is combined with a subkey using an XOR algorithm. Sixteen 48-bit subkeys, one for each of the
+16 rounds, are derived from the main key using a key schedule algorithm.
+
+3. Substitution: After mixing in the subkey, the block is divided into eight six-bit pieces before processing by the
+Substitution Boxes, or S-Boxes. Each of the eight of these replaces its six input bits with four output bits via a
+non-linear transformation, provided in the form of a lookup table. These provide the core security of the cipher.
+Without them, it would be linear, and therefore trivially breakable.
+
+4. Permutation: Finally, the 32 outputs from the S-Boxes are rearranged according to a fixed permutation, the P-Box.
+This is designed so that, after permutation, the bits from the P-Box and the E-expansion provides so-called
+"confusion and diffusion" respectively, a concept identified by Claude Shannon.
+
+A Timing Attack is one in which information about the key or plaintext is obtained by observing how long it takes a given
+implementation to perform decryptions on various ciphertexts.
+
+This exploits the fact that an encryption or decryption algorithm often take slightly different amounts of time on
+different inputs.
+
+So far it appears unlikely that this technique will ever be successful against DES or more powerful symmetric ciphers
+like triple DES and AES.
+
+In a Block cipher, the greater the number of rounds, the more difficult it becomes to perform cryptanalysis.
+
+In general, the criterion should be that the number of rounds is chosen so that the cryptanalytic efforts require
+greater effort than a simple brute-force key search.
+
+If DES had 15 or fewer rounds, differential cryptanalysis would require less effort than a plain old brute force attack.
+
+The heart of a Feistel Block cipher is the function F.
+
+The more non-linear F is, the more difficult any cryptanalysis will be. The SAC and BIC criteria appear to strengthen
+the effectiveness of the confusion function.
+
+The algorithm should have good avalanche properties.
+
+This means that any output bit J of an S-box should change with probability 1/2 when any single input bit I is
+inverted for all J,I.
+
+The bit independence criterion states that any output bits J and K should change independently when any single input
+bit I is inverted for all I, J, and K.
+
+With any Feistel block cipher, the key is used to generate one subkey for each round.
+
+In general, we would like to select subkeys to maximize the difficulty of deducing individual subkeys and the difficulty
+of working back to the main key.
+
+It is suggested that, at minimum, the key schedule should guarantee key/ciphertext Strict Avalanche Criterion and Bit
+Independence Criterion.
+
+
+
+
+
+
+
+

@@ -1,0 +1,120 @@
+System Architectures
+---------------------------------
+
+Large scale systems are common in modern software development.
+
+We can think of Google, Facebook, YouTube, and other services.
+
+Although few systems grow this big, it is important to design systems in such a way that they can scale.
+
+Systems on the level of Google or TikTok would qualify as Ultra Large Scale Systems, or ULSS.
+
+This is used in fields like CS, software engineering, and systems engineering to refer to systems with unprecedented:
+	> Amounts of hardware.
+	> Lines of code.
+	> Numbers of users.
+	> Volumes of data.
+
+Systems analysis is a related field, concerned with identifying the goals and functionality of processes to create
+systems that can help achieve them.
+
+Often, this involves breaking a system into parts that interact to accomplish a purpose, also known as stepwise refinement.
+
+Software engineering is another related field, the branch of engineering focused on software applications and
+systems.
+
+A complex system is a system composed of many interacting components.
+
+These systems are intrinsically difficult to model due to the complexity of the interactions of the components.
+
+They often exhibit emergent behaviour.
+
+Because IoT devices are often small and low-end, they are often insufficient for running any kind of complex code.
+
+We can get around this by outsourcing computation to an external system or environment.
+
+Therefore, it is useful to have some knowledge about how to categorise basic architectural patterns.
+
+The first architecture we can look at is device-to-cloud. In this architecture, IoT devices outsource the heavy
+processing that they can't perform themselves to a more powerful machine somewhere in the cloud.
+
+A variant of this is device-to-gateway, wherein IoT devices communicate with an intermediary gateway, which then
+connects to the cloud device or devices that run the code.
+
+A mesh network, or simply meshnet, is a local area network topology in which the infrastructure nodes, i.e. bridges,
+switches, and other infrastructure devices, connect directly, dynamically, and non-hierarchically to as many other
+nodes as possible.
+
+In this setup, they cooperate with one another to efficiently route data to and from clients.
+
+The idea in a mesh network is that the number of routes through the network is maximised, and devices can join
+and leave the network really easily.
+
+For example, several devices might be able to share the internet connection of only one device, by routing traffic
+through a mesh network.
+
+A communication protocol is the way an IoT device can talk to the cloud.
+
+The choice of protocol is very important - for example, it can have a major impact on performance and security.
+
+Developing your own protocol is possible, but often frowned upon, because it's usually good to keep to a standard,
+and prewritten protocols often have existing implementations to use.
+
+There are two main protocols used in IoT. Those are REST/RESTful APIs, and MQTT.
+
+REST stands for Representational State Transfer.
+
+It is a protocol commonly used in both web development and IoT. It is a stateless protocol, and makes use of the
+client/server model.
+
+It runs on top of existing, common technologies, typical examples of which would be:
+	> JSON to serialise messages.
+	> HTTPS to transmit them.
+
+Essentially, with REST:
+	> You talk to the server by sending JSON objects via HTTP.
+	> The server will return JSON objects in its response.
+	> The protocol is connectionless/stateless.
+
+Because the protocol is stateless, you need to re-authenticate each time, because the server won't remember you.
+
+The connectionless nature of REST allows for caching.
+
+REST is commonly used with load-balancing, since it is a good fit for this.
+
+A uniform interface allows components to evolve independently of each other.
+
+It can use a trick called code-on-demand, where a server can send JS code to a client, to extend client-side
+computation dynamically.
+
+MQTT is another protocol, which stands for Message Queue Telemetry Transport.
+
+It was originally developed for satellite communications, and is now commonly used for IoT.
+
+It works a bit like a WhatsApp group or mailing list - it allows messages to be sent over a network between peer
+machines, facilitated by a central server.
+
+However, communication is generally one-way - one member of the group sends messages, and others just read them.
+
+MQTT technology has a few different kinds of participant:
+	> Broker - The central server running the service.
+	> Topic - A single MQTT channel, like a WhatsApp group.
+	> Publisher - The client in a topic that receives a messages.
+
+With cloud computing, most processing occurs on a centralized server. This could be on-premises or run remotely.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

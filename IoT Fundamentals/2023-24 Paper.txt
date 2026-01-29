@@ -1,0 +1,39 @@
+2023-24 Paper
+---------------------------
+1. a) The devices basically all just talk to each other.
+
+1. b) Device to Gateway and Device to Cloud.
+	> To Gateway - Data goes through gateway device, then to server.
+	> To Cloud - Data goes directly to server.
+
+1. c) No need to pay for cloud infrastructure, better reliability, works well in absence of modern infrastructure.
+      Low communication range, high power consumption, more onboard processing.
+
+
+
+2. a) Arduino: Cheaper, better for real time processing, better community support.
+      Raspberry Pi: More computational power, better multi-tasking, system-on-chip.
+
+2. b) 
+
+2. c) 
+
+
+
+3. a) I. Cables and wires, physical transmission.
+      II. Transport of packets across network, uses IP.
+      III. Ensures reliable delivery, correct sequence of packets, TCP and UDP.
+      IV. The end application that processes the data and displays it to the user, HTTP.
+
+3. b) Fog computing is a pattern with a lot of edge computing, a distributed model that processes data locally
+      on devices or servers at the edge of the network.
+
+3. c) I. A central unit that receives data from publishers and sends it to subscribers.
+      II. Publishes data on a topic to the broker, which then sends it to subscribers who are subscribed to the topic.
+      III. Receives data from the broker on topics that it has subscribed to.
+
+
+
+4. a) Data in motion is data currently being transmitted, data in use is data currently being processed or used,
+      and data at rest is data currently being idly stored.
+

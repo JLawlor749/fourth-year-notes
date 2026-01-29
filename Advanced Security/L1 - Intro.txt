@@ -1,0 +1,155 @@
+Advanced Security
+-------------------------------------
+
+Cryptography and network security.
+
+60% exam to 40% CA ratio.
+
+Two CAs, one in week 6 (10%) and one in week 12 (10%).
+
+There will be two assignments:
+	> Cryptographic Tools (10%) - Week 5
+	> Algorithms Implementation (10%) - Week 11
+
+Module content will include:
+	> Number theory, discrete logs, elliptic curves.
+	> Stenography.
+	> Symmetric and Asymmetric encryption.
+	> Mutual trust.
+	> Cryptography.
+
+Cryptographic algorithms and protocols can be grouped into four main areas:
+	> Symmetric Encryption - Used to conceal the contents of blocks or streams of data.
+	> Asymmetric Encryption - Used to conceal small blocks of data such as encryption keys and hash function values.
+	> Data Integrity Algorithms - Used to protect blocks of data from alteration.
+	> Authentication Protocols - Use of cryptographic algorithms designed to authenticate the identity of enemies.
+
+The field of network and internet security consists of measures to deter, prevent, detect, and correct security violations
+that involve the transmission of information.
+
+The NIST Computer Security Handbook defines the term "computer security" as  "the protection afforded to an automated
+information system in order to attain the applicable objectives of preserving the integrity, availability, and
+confidentiality of system resources".
+
+
+Confidentiality
+	> Data Confidentiality
+		- Assures that private or confidential info is not made available or disclosed to unauthorized individuals.
+	> Privacy
+		- Assures that individuals control what info related to them may be collected and stored, and by whom.
+
+Integrity
+	> Data Integrity
+		- Assures that info and programs are changed only in a specified and authorized manner.
+	> System Integrity
+		- Assures that a system performs its intended function unimpaired, free of unauthorized manipulation.
+
+Availability
+	> Assures that systems work promptly and service is not denied to authorized users.
+
+
+These three form the CIA triad. Possible additional concepts to consider are Authenticity and Accountability.
+
+There are three levels of security breach impact:
+	> Low - The loss could be expected to have a limited adverse affect on the organization, assets, and individuals.
+	> Moderate - The loss could be expected to have a serious affect on the organization, assets, and individuals.
+	> High - The loss could be expected to have a severe or catastrophic adverse affect.
+
+Security is not simple. Potential attacks on any security features must be considered.
+
+It is necessary to decide where to use the various security mechanisms, and requires constant monitoring.
+
+Security mechanisms typically involve more than a particular algorithm or protocol. Security is essentially a battle of wits
+between a perpetrator and the designer.
+
+Little benefit from security investment is perceived until a security failure occurs.
+
+Strong security is often viewed as an impediment to efficient and user-friendly operation.
+
+Security Attack
+	> Any action that compromises the security of the information owned by an organization.
+
+Security Mechanism
+	> A process or device incorporating one, which is designed to detect, prevent, or recover from, a security attack.
+
+Security Service
+	> A processing or comms service that enhances security of processing systems and info transfers.
+	> Intended to counter security attacks, and make use of one or more security mechanisms to provide the service.
+
+A THREAT is a potential violation of security, which exists when there is a circumstance, capability, action, or event, that could breach security and cause harm. That is, a threat is a possible danger that might exploit a vulnerability.
+
+An ATTACK is an assault on system security that derives from an intelligent threat, that is, an intelligent act that is
+a deliberate attempt to evade security services and override the security policy of a system.
+
+Security attacks are often defined as Active or Passive attacks.
+
+A Passive Attack attempts to learn or make use of information from the system, but does not affect system resources.
+
+An Active Attack attempts to alter system resources or affect their operation.
+
+Passive Attacks are in the nature of eavesdropping on, or otherwise monitoring, transmissions.
+
+The goal of the enemy here is to obtain information in transit. This can be for the release of message contents, or
+for traffic analysis.
+
+Active Attacks involve some modification of the data stream, or the creation of a false stream.
+
+They are difficult to prevent because of the wide variety of physical, software, and network vulnerabilities.
+
+The goal is to detect these attacks and recover from any delay or disruption caused by them.
+
+Types of Active Attack include:
+	> Masquerade - An entity pretends to be another entity, often involves one of the other types.
+	> Replay - Involves passive capture of data unit and retransmission to cause unauthorized effect.
+	> Modification of Message - Change of some portion of a legitimate message, or delays or reorders.
+	> Denial of Service - Prevents or inhibits the normal use or management of comms facilities.
+
+A security service is a service provided by a protocol layer of communicating open systems that ensures adequate security
+of the systems or of data transfers.
+
+It is a processing or communication service provided by a system to give a specific kind of protection to system
+resources.
+
+Service categories include:
+	> Authentication
+	> Access Control
+	> Data Confidentiality
+	> Data Integrity
+	> Nonrepudiation
+
+Authentication is concerned with assuring that communication is authentic. In the case of a single message, it assures the
+recipient that the message is from who it claims to be from.
+
+In an ongoing interaction, it assures the two entities are authentic, and the connection is not tampered with such to
+allow a third party to masquerade as one of the two legitimate ones.
+
+Access control is the ability to limit and control the access to host systems and applications via communications links.
+
+To achieve this, each entity trying to gain access must first be identified, or authenticated, so that access rights can be tailored to the individual.
+
+Data confidentiality is the protection of transmitted data from passive attacks. The broadest service protects all user
+data transmitted between two users over a period of time.
+
+Narrower forms include the protection of a single message, or even specific fields within one.
+
+Data confidentiality also concerns the protection of traffic flow from analysis.
+
+This requires that an attacker not be able to observe the source and destination, frequency, length, or other traits
+of traffic on a communications facility.
+
+Data integrity can apply to a stream of messages, a single message, or selected fields within a message.
+
+It is a connection-oriented service, one that deals with a stream of messages, assures that messages are received as sent,
+with no duplication, insertion, modification, reordering, or replays.
+
+A connectionless integrity service, which deals with individual messages without any regard to larger context, generally
+provides protection against message modification only.
+
+Nonrepudiation prevents either the sender or receiver from declining a transmitted message.
+
+When a message is sent, the receiver can prove that the alleged sender sent the message.
+
+When a message is received, the sender can prove that the alleged receiver did actually received the message..
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      

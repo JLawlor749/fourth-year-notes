@@ -1,0 +1,76 @@
+Block Ciphers
+----------------------
+
+Double encryption is a simple way to enhance a cipher. Basically, we just run the cipher on the plaintext twice, using
+a different key each time.
+
+Now the plaintext is considered double-encrypted, and an attacker would need both keys to decrypt it.
+
+This technique does not always work though - sometimes it is true that for any X number of keys you encrypt a piece
+of plaintext with, you could also encrypt it with some single key and get the same result.
+
+Double DES refers specifically to using this technique with the Data Encryption Standard algorithm.
+
+The use of Double DES results in a mapping that is not equivalent to a single DES encryption, i.e. it is impossible to
+get the same result using a single key that you would get using two keys.
+
+A "meet-in-the-middle" attack algorithm will attack this scheme, and does not depend on any particular property of DES,
+but will work against any encryption cipher.
+
+Essentially, the "middle" text, or the text that appears in the encryption or decryption process after using the first
+key but not the second, will be the same.
+
+First we encrypt the plaintext by all possible keys, and put the results into a table. Then we decrypt the ciphertext
+by all possible keys and compare the results to the first table. Where we get a match is where we've found that "middle".
+
+Once we have that "middle" text, then the keys used to encrypt and decrypt must be the two keys used.
+
+An obvious counter to that is to use three stages of encryption with three different keys.
+
+This raises the cost of a meet-in-the-middle attack to 2^211, which is far beyond practical.
+
+It also has the drawback of requiring a key length of 168 bits, which is somewhat unwieldy.
+
+An alternative that was proposed was a triple encryption method using only two keys.
+
+3DES with 2 keys is a relatively popular DES alternative that has been adopted to the key management standards ANSI X9.17
+and ISO 8732.
+
+Essentially, we encrypt the plaintext with first key I, then decrypt it with second key J, then encrypt it again with
+the first key I.
+
+To perform a known-plaintext attack on this algorithm, an attacker must make a table of N known plaintext-ciphertext
+pairs, sorted on the plaintext.
+
+By trying all possible keys on the first set of ciphertext, i.e. that which is obtained after using only the first
+key, they can then match their plaintext result to their table with known plaintext in it.
+
+Once they have match, they know that that key is the first key, I.
+
+Then they perform a similar operation, except they decrypt the matched ciphertext from this pair by the first key.
+
+This gets them the second set of ciphertext, obtained after the first key encrypts and the second key decrypts.
+
+They can then use the same technique and use all possible keys to encrypt this text, and they know when they get a match
+that they have the second key.
+
+Many researchers now feel that three-key DES is the preferred alternative.
+
+A number of internet-based applications have adopted this, including PGP and S/MIME.
+
+A technique for enhancing the effect of cryptographic algorithms is to apply a block cipher in five modes of operation,
+as defined by NIST.
+
+The five modes are intended to cover a wide variety of applications of encryption for which a block cipher could be
+used.
+
+These modes are intended for use with any symmetric block cipher, including triple DES and AES.
+
+
+
+
+
+
+
+
+

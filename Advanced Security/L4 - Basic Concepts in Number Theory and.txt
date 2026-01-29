@@ -1,0 +1,110 @@
+Basic Concepts in Number Theory and Finite Fields
+---------------------------------------------------------
+
+We say that a nonzero "B" divides "A" if A=MB for some "M", where A, B, and M are all integers.
+
+B divides A if there is no remainder on division.
+
+The notation B|A is commonly used to mean B divides A.
+
+If B|A we say that B is a divisor of A.
+
+If A|1 then A = ∓1.
+
+If A|B and B|A then A = ∓B.
+
+Any B ≠ 0 divides 0.
+
+If A|B and B|C then A|C.
+
+If B|G and B|H, then B|(MG + NH) for arbitrary integers M and N.
+
+If B|G, then G is of the form G = B * G, for some integer G.
+
+If B|H, then H is of the form H = B * H for some integer H.
+
+So then, MG + NH = MBG + NBH = B * (MG + NH).
+
+Given any positive integer N, and any non-negative integer A, if we divide A by N, we get an integer quotient Q, and
+an integer remained R, that obey the following relationship:
+	- A = QN + R
+	- O ≤ R < N; Q = [A/N]
+
+One of the basic techniques of number theory is the Euclidean Algorithm.
+
+It is the procedure for determining the greatest common divisor of two positive integers.
+
+Two integers are relatively prime if their only common positive integer factor is 1.
+
+The greatest common divisor, or GCD, of A and B is the largest integer that divides both A and B.
+
+We can use the notation gcd(A,B) to mean greatest common divisor of A and B.
+
+We can also define gcd(0,0) = 0.
+
+Positive integer C is said to be the GCD of A and B if:
+	> C is a divisor of A and B.
+	> Any divisor of A and B is also a divisor of C.
+
+An equivalent definition is:
+	> gcd(A,B) = max[K, such that K|A and K|B].
+
+Because we require that the greatest common divisor be positive, gcd(A,B) = gcd(A,-B) = gcd(-A,-B) = gcd(-A,B).
+
+In general, gcd(A,B) = gcd(|A|, |B|).
+
+Because all nonzero integers divide 0, we also have gcd(A,0) = |A|.
+
+We stated that two integers A and B are relatively prime if their only common positive integer factor is 1.
+
+This is equivalent to saying that A and B are relatively prime if gcd(A,B) = 1.
+
+Euclid's algorithm allows for easily finding the GCD of two integers.
+
+Essentially, you start with the higher number and the lower one.
+
+The equation starts with the form of HIGHER + LOWER = 0.
+
+You then change it. Replace the higher number with the number of times the lower one goes into it, and replace the
+lower number with the remainder of this operation.
+
+So if the numbers are 35 + 8 = 0, the equation becomes (4)(8) + 3 = 0.
+
+This then goes on to (2)(3) + 2 = 0, which becomes (1)(2) + 1 = 0, and lastly (2)(1) + 0 = 0.
+
+Because the last remainder above 0 is 1, the GCD is 1.
+
+The idea of the Modulus is very important to arithmetic theory. If A is an integer and N is a positive integer, we can
+define A mod N to be the remainder when A is divided by N, with the integer N being called the modulus.
+
+Thus, for any integer A:
+	- A = QN + R		0 ≤ R < N; Q = [A/N]
+	- A = [A/N] * N + (A mod N)
+
+Congruent Modulo N - Two integers A and B are said to be congruent modulo N if (A mod N) = (B mod N).
+
+This is written as A = B(mod N).
+
+note that if A = 0(mod N), then N|A.
+
+Congruences have the following properties:
+	> A = B(mod N) if N|(A - B)
+	> A = B(mod N) implies B = A(mod N)
+	> A = B(mod N) and B = C(mod N) imply A = C(mod N)
+
+Modular arithmetic exhibits the following properties.
+	> [(a mod n) + (b mod n)] mod n = (a + b) mod n
+	> [(a mod n) - (b mod n)] mod n = (a - b) mod n
+	> [(a mod n) * (b mod n)] mod n = (a * b) mod n
+
+There are a series of different laws that define the properties of modular arithmetic:
+	> Commutative Laws
+	> Associative Laws
+	> Distributive Laws
+	> Identities
+	> Additive Inverse
+
+
+
+ 
+

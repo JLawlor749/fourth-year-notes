@@ -1,0 +1,122 @@
+Incident Response and Digital Evidence
+-------------------------------------------
+
+Digital evidence is present in most types of crime nowadays.
+
+Types of crimes can fall into the following categories:
+	> Cybercrime
+	> Cyber-aided Crime
+	> Crimes with Digital Evidence
+
+Cybercrime is defined as when a computer is used to perform a crime against another computer or system.
+
+For example, this could be hacking, malware attacks, or DDOS extortion.
+
+These types of crimes are usually performed by knowledgeable persons.
+
+For cybercrime, this means the opportunity and knowledge would involve specialized use of tools and knowledge
+of IT / Systems / Programming, etc.
+
+This can be important in an investigation when trying to identify suspects, and the skills needed to perform a
+transgression should match the suspect's profile.
+
+Cyber-aided crime, or cyber-enabled crime, is when a traditional crime is facilitated by technology.
+
+This can include theft, fraud, or even terrorism.
+
+These crimes and offences have been around a long time, and criminals do not need to be computer experts to use these
+tools.
+
+Crimes with digital evidence are any crimes where a forensic investigator can look for, and expect to find, digital
+evidence.
+
+In the past, maybe two people would meet on a street corner and exchange drugs and money. This kind of exchange leaves
+little evidence.
+
+Now, such an exchange might occur over a social platform, or email. This leaves far more evidence. It is difficult
+in modern society not to leave a digital footprint.
+
+Incident response involves managing incidents in an IT environment.
+
+This process is not particular to digital forensics, but it is important to follow process and procedure.
+
+Stuxnet was a malware that targeted specific controllers, made by Siemens, in an Iranian uranium enrichment plant.
+
+It was spread via USB keys. It infected local networks and contained a very specific payload to manipulate the controllers.
+
+The code lay dormant for a long time, and was triggered under specific conditions. This attack was clearly targeted
+and premeditated.
+
+Another example is WannaCry, a ransomware that infected approximately 200,000 machines. It encrypted the data on
+computers and demanded payment to get the data back.
+
+An attack like this was not specifically targeted, but aimed to hit as many devices as possible.
+
+When an incident occurs for an organization, it can be a very stressful situation to find the cause and offer a solution
+to remedy the problem.
+
+For example, the company MAERSK was hit with the Not Petya ransomware, and were forced to fully reinstall around 9000
+computers.
+
+This lead to them suffering a large financial loss for the downtime.
+
+For a situation like this, it is very important to very carefully prepare a solution.
+
+Organizations should have a CIRT, or Computer Incident Response Team.
+
+They need to develop policies and procedures, and their goal will be to know exactly what to do and when to do it.
+
+A CIRT needs a number of roles present:
+	> Technical Staff
+	> Legal Expertise
+	> Public Affairs
+	> HR
+	> Management
+
+Developing policies and procedures may contain several steps.
+
+These will give the CIRT team a roadmap to better manage the situation.
+
+The document should outline how to react to an incident.
+
+Define the incident:
+	> What has transpired and what type of event requires the activation of the CIRT?
+	> Some incidents are general and should be handled by the IT team.
+	> A DoS attack may require activation of CIRT.
+
+List the members of the CIRT:
+	> The document should have the names and contact info for each member.
+	> The role each person will perform should also be documented.
+	> Some people will need to provide ICE info.
+
+Business continuity plan:
+	> Determine a priority of incidents and functions.
+	> Describe what the most important IT assets are.
+	> The plan is trying to identify what can be sacrificed to protect more important assets.
+	> What needs to be performed for certain incident types?
+
+Communication plan:
+	> Who to contact and when.
+	> IT team members, Law enforcement, board of directors, media, etc.
+
+When something happens, it must be dealt with in a structured way: Identify, Contain/Eradicate/Recover, Post-Incident.
+
+To identify, we collect information, identify the nature of the incident (if any), evaluate and determine if CIRT
+activation is warranted, gather info from users who experienced the incident.
+
+Containing, eradicating, and recovering is meat of the incident management. You try to minimize the effect of the
+incident, and resume standard operation ASAP.
+
+For containment, you try to minimize infected devices. Eradication and recovery are the steps to try recover
+from the incident.
+
+During the post-incident, you document what happened, and security all evidence from the identification phase.
+
+A report should be written, and you should determine what further IT or legal action is needed.
+
+This also includes forensic examination of any material gathered in the identification phase.
+
+Digital forensics offers specific domain knowledge for these processes.
+
+
+

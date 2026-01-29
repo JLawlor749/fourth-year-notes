@@ -1,0 +1,72 @@
+More Number Theory
+--------------------------
+
+Prime numbers only have themselves and 1 as divisors.
+
+They cannot be written as a product of other numbers.
+
+Prime numbers are central to number theory.
+
+Any integer greater than 1 can be factored in a unique way as a combination of amounts of primes multiplied together.
+
+This is known as the fundamental theorem of arithmetic.
+
+Fermat's Theorem states that if P is prime, and A is a positive integer not divisible by P, then Aᵖ⁻¹ = 1(mod P).
+
+This is sometimes referred to as Fermat's Little Theorem.
+
+An alternate form is: if P is prime and A is a positive integer, then Aᵖ = A(mod P).
+
+This theorem plays an important role in public-key cryptography.
+
+Euler's Theorem states that for every A ad N that are relatively prime, A^(∅(N)+1) = A(mod N).
+
+In this, ∅(N), or Phi(N) represents Euler's Totient Function.
+
+It counts the number of positive integers up to a given integer N that are relatively prime to N.
+
+This plays an important role in public-key cryptography as well.
+
+The Miller-Rabin algorithm is typically used to test a large number for primality.
+
+The algorithm is as follows:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TEST(N)
+
+Find integers K, Q, with K > 0, Q odd, so that (N - 1 = 2ᴷQ);
+
+Select a random integer A, 1 < A < N - 1;
+
+If Aᑫ(mod N) == 1, then return ("inconclusive");
+
+For J = 0 to K - 1 do:
+	If A²^ᴶᑫ(mod N) == N - 1 then return ("inconclusive");
+
+Return ("composite");
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Prior to 2002 there was no known method of efficiently proving the primality of very large numbers.
+
+All algorithms used produced a probabilistic result.
+
+In 2002 Agrawal, Kayal, and Saxena developed an algorithm that efficiently determines whether a given large number
+is prime.
+
+This is known as the AKS algorithm. It does not appear to be as efficient as the Miller-Rabin algorithm.
+
+Chinese Remainder Theorem, or CRT, was believed to have been found by Sun-Tsu in around 100 A.D.
+
+It is one of the most useful results of number theory.
+
+It says that it is possible to reconstruct integers in a certain range from their residues modulo a set of pairwise
+relatively prime moduli.
+
+It can be stated in several ways.
+
+It provides a way to manipulate potentially very large numbers mod M in terms of tuples of smaller numbers.
+
+However, it is necessary to know beforehand the factorization of M.
+

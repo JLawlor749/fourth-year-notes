@@ -1,0 +1,120 @@
+Arduino Programming
+-----------------------
+
+Arduinos have a number of advantages, including that they are very cheap, have a huge range of models, and are hugely
+extensible.
+
+There are a family of addon boards called shields that can be used to expand the functionality of the Arduino.
+
+The Arduino board features a microcontroller, reset button, power, voltage regulator, digital I/O, peripheral power,
+analogue input, an oscillator, an AREF pin, and LEDs.
+
+AS we can see, they are quite complicated boards.
+
+There is an official Arduino IDE which makes programming for the devices quite easy.
+
+Arduino programs are called sketches, and are typically written in a variant of C++.
+
+They are transferred to the Arduino via the USB port.
+
+Arduino programs should have two main functions, setup(), which initialises, and loop(), which runs continuously.
+
+Unlike a typical C++ program, there is no main() function.
+
+To blink an LED, much like with the other boards, we do "pinMode(LED_PIN, OUTPUT)" in the setup() function, and then
+turn it on and off in the loop(), with "digitalWrite(LED_PIN, HIGH)" and "digitalWrite(LED_PIN, LOW)".
+
+We can also make the LED fade in and out, by giving it values from 0 to 255.
+
+We can also use a potentiometer for input, by using the "analogRead()" function:
+
+
+
+	#define LED_PIN 9
+	
+
+	void setup() {
+		pinMode(LED_PIN, OUTPUT);
+	}
+
+
+	void loop() {
+		int brightness = analogRead(A0);
+		brightness = map(brightness, 0, 1023, 0, 255);
+		analogWrite(LED_PIN, brightness);
+	}
+
+
+
+
+
+This code allows us to control the brightness of the LED using the potentiometer as a control.
+
+It is possible to read in input from a button using similar code, to achieve a similar result:
+
+
+
+	#define LED_PIN 9
+	# define BUTTOn_PIN 2
+	
+
+	void setup() {
+		pinMode(LED_PIN, OUTPUT);
+		pinMode(BUTTOn_PIN, INPUT);
+	}
+
+
+	bool led_on = false
+
+
+	void loop() {
+		int button_state = digitalRead(BUTTON_PIN);
+		
+		if(button_state == LOW) {
+			return;
+		}
+
+		if(led_on) {
+			digitalWrite(LED_PIN, LOW);
+			led_on = false;
+		} else {
+			digitalWrite(LED_PIN, HIGH);
+			led_on = true;
+		}
+	}
+
+
+
+There is a class called "Serial" that we can use with Arduino. Because the Arduino doesn't have a screen of its own,
+it can't run print statements. However, we can use the Serial class to run these and transmit the output.
+
+This allows us to debug using whatever is connected to the Serial port, which will be out computer.
+
+We start this by running "Serial.begin()" in the setup() function. We need to pass this function an integer called
+the baud rate, which is how quickly the computer and Arduino will communicate. We use 9600 for this.
+
+The TMP36 is a temperature sensor, with pins for power in, analogue out, and ground.
+
+The output pin outputs a voltage between 0 and 5 volts, which we use the function (V[out] - 500 / 10) to convert to
+Celsuis temperature.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
