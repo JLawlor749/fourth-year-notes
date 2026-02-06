@@ -1,0 +1,70 @@
+How Humans Visualise Data
+----------------------------------
+
+Visualisation can improve understanding, memory, and decision making.
+
+We must create effective and engaging visualisations that are appropriate to the data.
+
+Data is abstract, and represents trends, numbers, and relationships.
+
+By translating data into visual elements, we bring abstract concepts to life.
+
+Visual attributes used in data visualisation are things like:
+	> Position
+	> Length
+	> Size
+	> Shape
+	> Colour
+
+It is important to follow design principles grounded in human perception when making visualisations.
+
+Different kinds of data need different kinds of visualisations:
+	> Nominal can be used to compare categories or count.
+	> Ordinal can be used to rank things, or to compare orders.
+	> Interval can be used to compare differences.
+	> Ratio can be used to compare ratios and show magnitude.
+
+A data dimension is one channel of data. A visual property is a characteristic that can be seen, like colour, size,
+or location. Encoding is the visual property applied to a dimension that encodes information in a visual medium.
+
+We should use the fewest visual encodings necessary to communicate the message clearly. Every visual encoding
+demands attention and memory, and if an encoding does not add new information, it should not be used.
+
+For example, in a bar chart, the information we need is already being encoded in the height of the bars. If we made
+each bar a different colour, it wouldn't add much.
+
+A person's memory can be compared to a computer-based info system. It is a set of processes used to encode, store,
+and retrieve information over different periods of time.
+
+Encoding is the input of information into the memory system.
+
+Often times, words and their meanings are organised in our memory. For example, dog, horse, and cat, are all animals.
+
+This shared meaning helps with faster recall and recognition, and meaning-based grouping is much easier to remember
+than a random list of objects.
+
+Perceptions will differ based on stimulus. They are interpreted, allowing the brain to extract knowledge.
+
+We have sensory memory, short term memory, and long term memory. The main kinds of encoding are acoustic, semantic,
+and visual.
+
+Retrieval is the act of getting information out of memory storage and back into conscious awareness.
+
+Cognitive Load is the amount of mental effort required to process and understand information.
+
+There is the following types:
+	> Intrinsic - The inherent difficulty of the task or info.
+	> Extraneous - Unnecessary complexity that distracts from learning.
+	> Germane - The kind used to integrate new information into existing knowledge.
+
+Visual perception is selective. Our eyes are drawn to familiar patterns, and our working memory is limited. We want
+more visual perception and less cognition.
+
+
+
+
+
+
+
+
+

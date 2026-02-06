@@ -1,0 +1,29 @@
+Google Hacking for Penetration Tester
+----------------------------------------------
+
+Google is one of the most powerful databases in the world, and can be used to retrieve a lot of information.
+
+It is important to audit one's internet presence to be aware of what information can be retrieved by someone.
+
+Google also has a number of advanced search techniques, such as different operators that allow a user to narrow down
+their search results to a more desirable set.
+
+Operators are divided into a basic set, and an advanced set. The basic set is as follows:
+	> The + operator allows a forced inclusion.
+	> The - operator allows a term to be excluded.
+	> Surrounding a term in "quotes" allows for searching exact phrases.
+	> The ~ operator allows searching for synonyms.
+	> The . operator is a single-character wildcard.
+	> The * operator is an any-word wildcard.
+	> The AND operator searches for terms before and after the operator.
+	> The OR operator searches for results that include either term, or both.
+
+Moving on to the advanced operators, we have the following.
+	> The "site" operator allows you to specify a site or domain, e.g. "site:tudublin.ie"
+	> The "filetype" operator allows google searches for specific types of file, e.g. "filetype:pdf"
+	> The "info" operator allows google to return information on a domain, e.g. "info:www.tudublin.ie"
+	> The "intitle" operator allows you to force results for a term in the page title, e.g. "intitle:Google"
+	> The "inurl" operator allows you to force results for a term in the url, e.g. "inurl:index.html"
+	> The "intext" operator allows you to force results for a term in the page text, e.g. "intext:free movies"
+	> The "cache" operator allows you to find old versions of a site cached on google, e.g. "cache:www.tudublin.ie"
+	> 
