@@ -1,0 +1,203 @@
+---
+title: "Lab 2"
+author: "James Lawlor"
+format: html
+editor: visual
+---
+
+## Part 0 - Setup
+
+The following code installs the libaries required for this lab activity.
+
+```{r}
+# Install necessary libraries and packages if they are needed.
+
+if(!requireNamespace("tidyverse", quietly = TRUE)) {
+  install.packages("tidyverse")
+}
+
+if(!requireNamespace("zoo", quietly = TRUE)) {
+  install.packages("zoo")
+}
+
+library(tidyverse)
+library(zoo)
+
+```
+
+## Part 1 - Data
+
+The following code imports the data that will be used from a CSV file.
+
+```{r}
+# Import the data from CSV file.
+
+mxmh <- read_csv("data/mxmh_survey_results.csv")
+
+# Display some of the data.
+
+glimpse(mxmh)
+```
+
+## Part 2 - Initial Processing
+
+Next, we'll group some mental health scores by favourite genre. I'll be using the Depression score.
+
+```{r}
+# Group data by Depression score.
+
+mh_grouped <- mxmh %>% select('Fav genre', Depression) %>% rename(Group = 'Fav genre')
+
+glimpse(mh_grouped)
+
+# Figure out how many unique categories in Fav genre.
+
+genres <- unique(mh_grouped['Group'])
+
+genres
+```
+
+With this code, we have the Depression scores and their matching favourite genres grouped together.
+We also have the number of unique genres in the data, which is 16.
+Next, we'll count instances of genres to get an idea of which ones are more rare or common.
+
+```{r}
+# Count instances of each genre, order by the count.
+
+mh_grouped %>% count(Group,name='n') %>% arrange(n)
+```
+
+As we can see, some genres occur vastly more often than others. This is an issue because in a visualisation, these rarer elements can be entirely drowned out, and very hard to see.
+
+## Part 3 - Summary
+
+Using raw survey data, there will be hundreds of points. This will overwhelm a reader, make it difficult
+to compare categories, and hide patterns. We instead summarize data, such that each category has one value and mental health scores are averaged.
+
+```{r}
+# Summarise data by grouping the average depression scores with each genre.
+
+mh_summary2 <- mh_grouped %>% group_by(Group) %>% summarise(
+  Depression = mean(Depression, na.rm = TRUE),
+  .groups = 'drop'
+) %>% filter(!is.na(Group))
+
+mh_summary2
+```
+
+This summary is far more easily read than the raw data, because each distinct category (the genres) is represented by a single averaged value. This makes comparisons between categories more manageable.
+
+## Part 4 - A Bad Visualisation
+
+In this section, I'll create a poor visualisation on purpose, intentionally incorporating problems in order to highlight the pitfalls of making such a visualisation.
+
+```{r}
+# Create a plot with redundant encoding, too many colours, and poor ordering.
+
+ggplot(mh_summary2,
+       aes(x=Group,
+           y=Depression,
+           fill=Group,
+           color=Group)) +
+  geom_col() +
+  labs(title="Average Depression Score Categorized by Favourite Music Genre",
+       x="Genre",
+       y="Depression") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+## Part 5 - A Better Visualisation
+
+In this section, I'll create a better visualisation, improving on some of the issues with the previous one.
+
+```{r}
+# Create a plot with improved ordering, encoding, and colours.
+
+ggplot(mh_summary2,
+       aes(x=reorder(Group, Depression),
+           y=Depression)) +
+  geom_col(show.legend = FALSE, fill = 'steelblue') +
+  labs(title="Average Depression Score Categorized by Favourite Music Genre",
+       x="Genre",
+       y="Depression") + coord_flip() +
+  theme(axis.text.x = element_text(hjust = 1))
+```
+
+This version has better encoding - it relies on bar length instead of colour for the most part. It also has the axes flipped to make everything more readable, and is ordered from highest to lowest average.
+
+## Part 6 - Comparing Multiples
+
+Here I'll be repeating previous steps, but including a second mental health variable in the groupings.
+
+```{r}
+mh_grouped <- mxmh %>% select('Fav genre', Depression, Insomnia) %>% rename(Group = 'Fav genre')
+
+mh_summary2 <- mh_grouped %>% group_by(Group) %>% summarise(
+  Depression = mean(Depression, na.rm = TRUE),
+  Insomnia = mean(Insomnia, na.rm = TRUE),
+  .groups = 'drop'
+) %>% filter(!is.na(Group))
+
+mh_long <- mh_summary2 %>% pivot_longer(
+  cols = Depression:Insomnia,
+  names_to = 'Condition',
+  values_to = 'Score'
+)
+
+```
+
+First I'll created a stacked bar chart, which is the poorer of the two main ways to represent this data.
+
+```{r}
+ggplot(mh_long, aes(
+  x = Group,
+  y = Score,
+  fill = Condition)) + geom_col(position = 'stack') + coord_flip() + labs(
+    title = "Mental Health Scores by Favourite Genre"
+  )
+```
+
+Next, I'll create a faceted chart, which is a better way to represent this data.
+
+```{r}
+ggplot(mh_long, aes(
+  x = Group,
+  y = Score)) + geom_col(show.legend = FALSE, fill = 'steelblue') + facet_wrap(~ Condition, scales="free_y") +
+  coord_flip() + labs(
+    title = "Mental Health Scores by Favourite Genre"
+  )
+```
+
+## Part 7 - Applying Good Practices
+
+In this section, I'll be applying the good practices learnt in the previous sections, to a new dataset.
+I'll be using a dataset of high-popularity spotify song data, and comparing attributes of different songs.
+
+```{r}
+spotify_data <- read_csv("data/high_popularity_spotify_data.csv")
+
+spotify_grouped <- spotify_data %>% select('playlist_genre', energy, instrumentalness) %>% rename(Group = 'playlist_genre')
+
+spotify_summary2 <- spotify_grouped %>% group_by(Group) %>% summarise(
+  instrumentalness = mean(instrumentalness, na.rm = TRUE),
+  energy = mean(energy, na.rm = TRUE),
+  .groups = 'drop'
+) %>% filter(!is.na(Group))
+
+spotify_long <- spotify_summary2 %>% pivot_longer(
+  cols = instrumentalness:energy,
+  names_to = 'Attribute',
+  values_to = 'Score'
+)
+
+
+ggplot(spotify_long, aes(
+  x = reorder(Group, Score),
+  y = Score)) + geom_col(show.legend = FALSE, fill = 'steelblue') + facet_wrap(~ Attribute, scales="free_y") +
+  coord_flip() + labs(
+    title = "Instrumentalness and Energy by Genre in Popular Songs",
+    x = "Genre",
+    y = "Attribute Score")
+
+```
+

@@ -1,0 +1,110 @@
+---
+title: "Lab 1 Quarto"
+author: "James Lawlor"
+format: html
+editor: visual
+---
+
+## Part 1
+
+My script displays a plot that shows life expectancy for each continent, mapped against GDP per capita. It is displayed as a scatter plot, with the continents being differentiated by the colour of the points.
+
+## Code
+
+Here is the code used to display this plot:
+
+```{r}
+library(tidyverse)
+library(gapminder)
+
+ggplot(gapminder,
+       aes(x=lifeExp,
+           y=gdpPercap,
+           color=continent,
+           size = 3)) + geom_point()
+```
+
+<br>
+
+## Part 2
+
+For the second part, the script will compare GDP across continents on average in 2007.
+
+## Code
+
+Here is the script used to accomplish this comparison.
+
+```{r}
+library(tidyverse)
+library(gapminder)
+
+gap_2007 <- filter(gapminder, year==2007)
+
+continentgdp <- gap_2007 %>% group_by(continent) %>% summarise(mean_gdp = mean(gdpPercap))
+
+ggplot(continentgdp,
+       aes(x=continent,
+           y=mean_gdp,
+           fill = continent)) + geom_col() + labs(title = "Average GDP per Capita by Continent 2007",
+                                                  x = "Continent",
+                                                  y = "Average GDP per Capita")
+```
+
+<br>
+
+## Part 3
+
+For the third part, the script will compare median GDP instead.
+
+## Code
+
+Here is the script used to accomplish this comparison.
+
+```{r}
+library(tidyverse)
+library(gapminder)
+
+gap_2007 <- filter(gapminder, year==2007)
+
+continentgdp <- gap_2007 %>% group_by(continent) %>% summarise(median_gdp = median(gdpPercap))
+
+ggplot(continentgdp,
+       aes(x=continent,
+           y=median_gdp,
+           fill = continent)) + geom_col() + labs(title = "Average GDP per Capita by Continent 2007",
+                                                  x = "Continent",
+                                                  y = "Average GDP per Capita")
+```
+
+<br>
+
+## Part 4
+
+For the fourth part, the script will get the top 10 countries for GDP per continent in 2007.
+
+## Code
+
+Here is the script used to accomplish this comparison.
+
+```{r}
+library(tidyverse)
+library(gapminder)
+
+gap_2007 <- filter(gapminder, year==2007)
+
+top10 <- gap_2007 %>% group_by(continent) %>% slice_max(gdpPercap, n=10)
+
+ggplot(top10,
+       aes(x=reorder(country, gdpPercap),
+           y=gdpPercap,
+           fill=continent)) + geom_col(show.legend = FALSE) +
+  facet_wrap(~ continent, scales="free_y") + coord_flip() +
+  labs(title = "Top 10 Countries for each Continent by GDP per Capita, 2007",
+       x = "Country",
+       y = "GDP per Capita") + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+
+
+```
+
+The newer version of the code which includes "scales='free_y'" is much easier to read, as it allows for the plot to take up greater space on the Y access, allowing the elements more room to breathe.
