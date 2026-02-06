@@ -1,0 +1,146 @@
+Systems Software Introduction
+--------------------------------------
+
+Assessment is 70% Exam, 30% CA.
+
+CA is made up of two CA submissions, each worth 15%, and due weeks 7/8 and 12/13 provisionally.
+
+Notes on Brightspace are only summaries, and we'll need to find our own supplementary materials.
+
+A Unix system has three main components:
+	> Kernel
+	> Shell
+	> Programs
+
+Linux is often used interchangeably to refer to the kernel and to the full OS, of which there
+are multiple different distributions:
+	> Debian GNU
+	> Ubuntu
+	> Mandriva
+	> Fedora
+	> Arch
+
+The interface to the kernel is a layer of software called system calls.
+
+Programs use system calls to execute operations.
+
+Libraries are common functionalities that are available for use and sit on top of system calls.
+
+The shell is an interface between the user and the kernel.
+
+The shell is a command line interpreter, or CLI.
+
+A user can enter commands via the CLI, the program will run, and the program can interact with
+the kernel by using system calls to perform tasks.
+
+There are a number of different shells that can be used: Bash / Korn / C shell.
+
+There are a large number of commands that can be used to carry out tasks in a UNIX environment.
+
+For example, mv, cp, ls, grep, pwd, etc. are all used to carry out basic tasks.
+
+Each one has a number of options that can be use with it to perform more specific tasks.
+
+A number of commands can be grouped to create a shell script to perform a larger task.
+
+When the functionality needed is greater than that of a shell script, a program
+can solve the problem instead.
+
+A program can be written in a language, like C, to solve the problem.
+
+The program will have more control over the system, and can access the OS APIs and system calls
+to make very low-level tasks easier. They can also offer better performance and efficiency.
+
+The GNU project was created in 1983 to create a free software Unix-like system.
+
+It stands for "GNU's not Linux".
+
+The Linux kernel was created by Linus Torvalds in 1991, and released as free software
+under the GNU General Public License.
+
+A lot of GNU packages that were developed for Linux have made their way to Unix systems.
+
+Linux systems have gained prominence as the OS of choice for servers.
+
+A Linux system is made up of the kernel, the GNU utilities, the Graphical Desktop
+Environment, and the application software.
+
+The IEEE was the main body responsible for the standardization of Unix. The IEEE standards
+for Unix is known as POSIX.
+
+The Open Group, a group of Unix vendors, is now responsible for this standardization.
+
+The UNIX command for compiling a program is gcc.
+
+GCC is a compiler from GNU for Linux.
+
+A program needs to be compiled and this process creates a binary code file that can be executed.
+
+Linux distros include manual pages for user commands, system calls, standard library functions,
+and System or Admin related commands.
+
+The UNIX philosophy can be summed up as:
+	> Write programs that do one thing and do it well.
+	> Write programs to work together.
+	> Write programs to handle text streams, as that is a universal interface.
+
+General design principles include:
+	> DRY - don't repeat yourself.
+	> KISS - keep it simple stupid.
+	> YAGNI - you ain't gonna need it.
+	> SoC - separation of concerns.
+
+Make was implemented by Richard Stallman and Roland McGrath.
+
+The GNU make utility is used to automate which parts of a large program may need to be
+recompiled.
+
+make can facilitate the creation of larger programs from separate sources.
+
+Make can automate tasks for compilation, cleaning, debugging, and organising outputs.
+
+The make command allows for a program to be recompiled in a very specific sequence.
+
+it uses a makefile to detail the commands for compiling and updating each file.
+
+The main executable is made up of object files.
+
+The object files are compiled from C source files.
+
+The makefile contains the sequence for creating the main executable, and then
+the make command runs the makefile.
+
+Command line arguments can be provided to make to specify which files should be recompiled.
+
+A makefile will be created to describe the process needed to recompile a program.
+
+Most often, the makefile tells make how to compile and link a program.
+
+Makefiles are a good idea because:
+	> Faster to recompile things.
+	> Organize "steps" in a potentially complex compilation into one place.
+
+The first line represents the name of a recipe, and is written as "build:".
+
+The list of files after the colon represents all the things that the program depends on.
+
+On the next line, there is a TAB followed by a compile command.
+
+This represents the steps that are required to make the recipe for the program.
+
+Then all that has to be done in command line is to type "go [program name]".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
